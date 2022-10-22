@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GPSTest.unity
+    guid: 852804be34b8f4149aafacadc20f1da5
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 68364e0eed003544ca43a562e3dc0b28, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: aacaf59405dce9b41aa38bd80538e341, type: 2}
