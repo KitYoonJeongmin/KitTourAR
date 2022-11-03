@@ -17,6 +17,8 @@ public class GPS : MonoBehaviour
     //위도 경도 변경
     public float latitude = 0;
     public float longitude = 0;
+
+    public Vector3 unityCoor;
     float waitTime = 0;
 
     public bool receiveGPS = false;
@@ -30,7 +32,7 @@ public class GPS : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(GPS_On());
+        StartCoroutine(GPS_On());   
     }
 
     //GPS처리 함수
@@ -55,7 +57,7 @@ public class GPS : MonoBehaviour
         }
 
         //위치 데이터를 요청 -> 수신 대기
-        Input.location.Start();
+        Input.location.Start(2.0f, 1.0f);
 
         //GPS 수신 상태가 초기 상태에서 일정 시간 동안 대기함
         while (Input.location.status == LocationServiceStatus.Initializing && waitTime < maxWaitTime)
@@ -81,11 +83,11 @@ public class GPS : MonoBehaviour
         //수신된 GPS 데이터를 화면에 출력/
        
         LocationInfo li = Input.location.lastData;
-         /*latitude = li.latitude;
+        latitude = li.latitude;
         longitude = li.longitude;
         latitude_text.text = "위도 : " + latitude.ToString();
         longitude_text.text = "경도 : " + longitude.ToString();
-        */
+        
         //위치 정보 수신 시작 체크
         receiveGPS = true;
 
@@ -98,7 +100,7 @@ public class GPS : MonoBehaviour
 
             latitude_text.text = "위도 : " + latitude.ToString();
             longitude_text.text = "경도 : " + longitude.ToString();
-
+            unityCoor = GPSEncoder.GPSToUCS(latitude, longitude);
             yield return new WaitForSeconds(resendTime);
         }
     }
