@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,190 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &353254122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353254125}
-  - component: {fileID: 353254124}
-  - component: {fileID: 353254127}
-  m_Layer: 0
-  m_Name: ae
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &353254124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353254122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -576295101, guid: 322c8874b7f0401c8c1211fe39d44d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FeatureTileApiUrlFormat: https://vectortile.googleapis.com/v1/featuretiles/@{0},{1},{2}z
-  TerrainTileApiUrlFormat: https://vectortile.googleapis.com/v1/terraintiles/@{0},{1},{2}z
-  ApiKey: AIzaSyCpIXGApbsWapIVX0w9h1Pzfepftyu5jdc
-  NetworkPoolSize: 100
-  NetworkTimeoutSeconds: 10
-  EnableDiagnostics: 1
-  _Events:
-    _ExtrudedStructureEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _ModeledStructureEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _SegmentEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _IntersectionEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _RegionEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _AreaWaterEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _LineWaterEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-    _RoadLatticeEvents:
-      DidModify:
-        m_PersistentCalls:
-          m_Calls: []
-    _MapEvents:
-      LoadStart:
-        m_PersistentCalls:
-          m_Calls: []
-      Loaded:
-        m_PersistentCalls:
-          m_Calls: []
-      LoadError:
-        m_PersistentCalls:
-          m_Calls: []
-      Progress:
-        m_PersistentCalls:
-          m_Calls: []
-    _TerrainEvents:
-      WillCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      DidCreate:
-        m_PersistentCalls:
-          m_Calls: []
-      FeatureMaskPreRender:
-        m_PersistentCalls:
-          m_Calls: []
-      WillCreateFeatureMaskTexture:
-        m_PersistentCalls:
-          m_Calls: []
-      AlphaMapsNeedPaint:
-        m_PersistentCalls:
-          m_Calls: []
-      DidPaint:
-        m_PersistentCalls:
-          m_Calls: []
-  EnableModeledStructures: 1
-  EnablePrivateRoads: 0
-  EnableTerrain: 0
-  Use32BitMeshIndexBuffers: 0
-  ObjectCreationFrameBudget: 0
-  StaticBatching: 0
-  TerrainOptions:
-    TerrainMeshMetersPerPoint: 1
-    AltitudePrecision: 0.01
-  EnableIntersections: 0
-  EnableExhaustiveIntersectionReconstruction: 1
-  EnableRoadLattice: 0
-  MapPreviewOptions:
-    Enable: 0
-    Location:
-      _Lat: 36.144
-      _Lng: 128.39200000000005
-    Size: 276
-  MetadataOptions:
-    Method: 1
-    MetadataRegister: {fileID: 0}
-  ZoomLevel: 17
-  _CacheOptions:
-    BasePath: 
-    Directory: Google.Maps
-    MaxDiskBytes: 10485760
-    DiskTimeoutSeconds: 0
-  CountryProvider: {fileID: 0}
-  LanguageCode: 
-  MinBasemapSortingOrder: -32767
-  MaxBasemapSortingOrder: -1
-  NonBasemapSortingOrder: 0
---- !u!4 &353254125
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353254122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &353254127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353254122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d998febeff6e423baf0d081cd85e448, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LatLng:
-    _Lat: 36.1446
-    _Lng: 128.39210000000003
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,3 +301,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1239597822
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8058242231173309237, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_Name
+      value: KitMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058242231173309240, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
