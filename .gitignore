@@ -11,6 +11,12 @@
 /[Mm]emoryCaptures/
 /[Uu]ser[Ss]ettings/
 
+#FirebaseFirestore 이그노어 추가
+[Aa]ssets/Plugins/iOS/Firebase/
+[Aa]ssets/Firebase/
+[Aa]ssets/ExternalDependencyManager/
+[Aa]ssets/Editor Default Resources/Firebase/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
