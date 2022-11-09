@@ -1,110 +1,41 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using UnityEngine.XR.ARFoundation;
-//using UnityEngine.XR.ARSubsystems;
-//using UnityEngine.UI;
-
-
-//public class AREventGen : MonoBehaviour
-//{
-//    public Text text1;
-//    public Text text2;
-//    public struct LatLong
-//    {
-//        public float lat;
-//        public float lon;
-//    }
-//    //위치를 구하기 위한 변수
-//    private GameObject GPSManager;
-//    private Vector3 currentLocation;
-//    private Vector3 eventLoaction;
-//    //이벤트 프리팹을 생성하기 위한 변수
-//    public GameObject eventPre;
-
-//    //위도경도
-//    public LatLong[] latLongs;
-//    //이벤트 생성 유무
-//    public bool isGen;
-//    //레이캐스트 저장
-//    ARRaycastManager arRayMan;
-
-
-//    // Start is called before the first frame update
-//    void Start()
-//    {
-//        //GPS Object 가져옴
-//        GPSManager = GameObject.Find("GPSManager");
-//        arRayMan = GetComponent<ARRaycastManager>();
-//        eventPre.SetActive(false);
-//        isGen = false;
-//    }
-//    void Update()
-//    {
-//        text2.text = "생성 유무: " + isGen.ToString();
-//        currentLocation = GPSManager.GetComponent<GPS>().unityCoor;
-//        if (!isGen)
-//        {
-//            GenerateEventPre();
-//        }
-//        else
-//        {
-//            DestroyEventPre();
-//        }
-
-//    }
-//    void DestroyEventPre()
-//    {
-
-//        if (1000000 < Vector3.Magnitude(eventPre.transform.position - currentLocation))
-//        {
-//            eventPre.SetActive(false);
-//            isGen = false;
-//        }
-//    }
-
-//    void GenerateEventPre()
-//    {
-
-//        //스마트폰 스크린의 Center를 찾음
-//        Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
-//        //Ray에 부딪힌 대상들의 정보를 저장할 리스트 생성
-//        List<ARRaycastHit> hitInfos = new List<ARRaycastHit>();
-//        //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
-//        if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
-//        {
-//            //표식 오브젝트 활성화
-//            eventPre.SetActive(true);
-//            //표식 오브젝트의 위치와 회전값 업데이트
-//            eventPre.transform.position = hitInfos[0].pose.position;
-//            eventPre.transform.rotation = hitInfos[0].pose.rotation;
-//        }
-
-//    }
-//}
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
+using Firebase.Firestore;
+using System.Threading.Tasks;
+using System.Threading;
+
+
 public class AREventGen : MonoBehaviour
 {
+    //오브젝트-유저 사이의 거리와 오브젝트 생성 여부를 알려주는 text
     public Text text1;
     public Text text2;
-    public GameObject eventPre; //인디케이터 저장
+
+    public GameObject eventPre; //이벤트 프리팹 저장
     ARRaycastManager arRayMan; //ARRaycastManager 컴포넌트 저장
     private GameObject GPSManager;
     private Vector3 currentLocation;
     public bool isGen;
-    public struct LatLong
+    static public int distance = 20; //이벤트 프리팹을 활성화/비활성화 하기위한 거리
+    [Serializable]
+    public struct LatLong //위경도 저장 구조체
     {
+        public string name;
         public float lat;
         public float lon;
     }
-    public LatLong[] latLongs;
+    [Header("위치 정보")]
+    public LatLong[] latLongs; //위경도 저장 배열
+    
     void Start()
     {
+        latLongs = new LatLong[30];
+        GetLatLonFromFB();
         GPSManager = GameObject.Find("GPSManager");
 
         //인디케이터 비활성화
@@ -116,12 +47,14 @@ public class AREventGen : MonoBehaviour
         latLongs[0].lat = 36.1254f;
         latLongs[0].lon = 128.3625f;
     }
+
+    /** 근처에 이벤트를 생성할 곳이 있는지 확인*/
     void DetectPlace()
     {
         foreach(LatLong latLong in latLongs)
         {
             if(Vector3.Magnitude(currentLocation
-                - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon))>20)
+                - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon))> distance)
             {
                 return;
             }
@@ -129,6 +62,8 @@ public class AREventGen : MonoBehaviour
         }
         
     }
+
+    /**이벤트 프리팹 생성*/
     void DetectGround()
     {
         //스마트폰 스크린의 Center를 찾음
@@ -147,15 +82,19 @@ public class AREventGen : MonoBehaviour
             isGen = true;
         }
     }
+
+    /**유저가 이벤트 프리팹과 멀어질 때 프리팹 비활성화*/
     void DestroyEventPre()
     {
 
-        if (1000000 < Vector3.Magnitude(eventPre.transform.position - currentLocation))
+        if (distance < Vector3.Magnitude(eventPre.transform.position - currentLocation))
         {
             eventPre.SetActive(false);
             isGen = false;
         }
     }
+
+    /**이벤트 프리팹의 활성화, 비활성화를 감지*/
     void Update()
     {
         
@@ -164,7 +103,7 @@ public class AREventGen : MonoBehaviour
 
         if (!isGen)
         {
-            DetectGround();
+            DetectPlace();
         }
         else
         {
@@ -172,9 +111,29 @@ public class AREventGen : MonoBehaviour
         }
 
     }
+    /**현재위치를 unity coord로 변환한 것을 0.2초마다 가져옴*/
     void GetUNTCoord()
     {
         currentLocation = GPSManager.GetComponent<GPS>().unityCoor;
     }
 
+    /**firebase에서 latlong를 가져옴**/
+    async void GetLatLonFromFB()
+    {
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        CollectionReference playlistref = db.Collection("smallEvent");  //smallEvent 컬렉션을 기리킴.
+        QuerySnapshot snapshot= await playlistref.GetSnapshotAsync();  //data들을 가져오라고 서버에 요청
+        
+        int i = 0;
+        foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
+        {
+            Dictionary<string, object> documentDictionary = document.ToDictionary();    //각 문서를 dictionary로 받음.
+            latLongs[i].name = documentDictionary["name"].ToString();
+            GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
+            latLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
+            latLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
+
+            i++;
+        }
+    }
 }
