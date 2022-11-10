@@ -58,13 +58,13 @@ public class AREventGen : MonoBehaviour
             {
                 return;
             }
-            DetectGround();
+            DetectGround(latLong);
         }
         
     }
 
     /**이벤트 프리팹 생성*/
-    void DetectGround()
+    void DetectGround(LatLong latLong)
     {
         //스마트폰 스크린의 Center를 찾음
         Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
@@ -80,6 +80,7 @@ public class AREventGen : MonoBehaviour
             eventPre.transform.position = hitInfos[0].pose.position;
             eventPre.transform.rotation = hitInfos[0].pose.rotation;
             isGen = true;
+            text1.text = latLong.name;
         }
     }
 
@@ -98,7 +99,7 @@ public class AREventGen : MonoBehaviour
     void Update()
     {
         
-        text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
+        //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
         text2.text = "생성 유무: " + isGen.ToString();
 
         if (!isGen)
