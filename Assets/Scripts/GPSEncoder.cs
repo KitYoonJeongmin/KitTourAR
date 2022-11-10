@@ -114,7 +114,7 @@ public sealed class GPSEncoder: MonoBehaviour
 	{
 		FindMetersPerLat(_LatOrigin);
 		float zPosition = metersPerLat * (gps.x - _LatOrigin); //Calc current lat
-		float xPosition = metersPerLon * (gps.y - _LonOrigin); //Calc current lat
+		float xPosition = metersPerLon * (gps.y - _LonOrigin); //Calc current lon
 		return new Vector3((float)xPosition, 0, (float)zPosition);
 	}
 

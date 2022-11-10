@@ -32,7 +32,7 @@ public class GPS : MonoBehaviour
     }
     void Start()
     {
-        StartCoroutine(GPS_On());   
+        StartCoroutine(GPS_On());
     }
 
     //GPS처리 함수
