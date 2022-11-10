@@ -34,7 +34,7 @@ public class AREventGen : MonoBehaviour
     
     void Start()
     {
-        latLongs = new LatLong[30];
+        latLongs = new LatLong[22];
         GetLatLonFromFB();
         GPSManager = GameObject.Find("GPSManager");
 
@@ -128,8 +128,8 @@ public class AREventGen : MonoBehaviour
         int i = 0;
         foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
         {
+            latLongs[i].name = document.Id.ToString();
             Dictionary<string, object> documentDictionary = document.ToDictionary();    //각 문서를 dictionary로 받음.
-            latLongs[i].name = documentDictionary["name"].ToString();
             GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
             latLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
             latLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
