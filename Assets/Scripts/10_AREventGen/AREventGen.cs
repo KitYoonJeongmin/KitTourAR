@@ -33,11 +33,14 @@ public class AREventGen : MonoBehaviour
     }
     [Header("위치 정보")]
     public LatLong[] latLongs; //위경도 저장 배열
-    
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         test = 36.1462f;
-        distance = 20;
+        distance = 1000;
         latLongs = new LatLong[22];
         GetLatLonFromFB();
         GPSManager = GameObject.Find("GPSManager");
@@ -56,7 +59,6 @@ public class AREventGen : MonoBehaviour
     {
         foreach (LatLong latLong in latLongs)
         {
-            
             if (Vector3.Magnitude(currentLocation - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon)) > distance)
             {
                 isInPlace = false;
@@ -78,7 +80,7 @@ public class AREventGen : MonoBehaviour
         //Ray에 부딪힌 대상들의 정보를 저장할 리스트 생성
         List<ARRaycastHit> hitInfos = new List<ARRaycastHit>();
         Debug.Log(place);
-        isGen = true;
+
         //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
         if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
         {
@@ -102,8 +104,9 @@ public class AREventGen : MonoBehaviour
     /**이벤트 프리팹의 활성화, 비활성화를 감지*/
     void Update()
     {
-        
+
         //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
+        text1.text = "위치: " + isInPlace.ToString();
         text2.text = "생성 유무: " + isGen.ToString();
         if (!isInPlace) 
         {
@@ -128,7 +131,7 @@ public class AREventGen : MonoBehaviour
         currentLocation = GPSEncoder.GPSToUCS(test, 128.3928f);
     }
 
-    /**firebase에서 latlong를 가져옴**/
+    /**firebase에서 latlong를 가져옴*/
     async void GetLatLonFromFB()
     {
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
