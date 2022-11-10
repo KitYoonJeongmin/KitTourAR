@@ -25,6 +25,7 @@ public class moveCharactor : MonoBehaviour
 
     void charactorMove()
     {
+        KeybordMove();
         GetLatitude();
         transform.position = locationVec;
     }
@@ -33,9 +34,12 @@ public class moveCharactor : MonoBehaviour
         //locationVec = GPSManager.GetComponent<GPS>().unityCoor;
         locationVec = GPSEncoder.GPSToUCS(lat, lon);
     }
-    //void KeybordMove()
-    //{
-    //    //Vector3 mov = transform.forward * Input.GetAxis("Vertical");
-    //    //transform.position += (mov * mov_speed * Time.deltaTime);
-    //}
+    void KeybordMove()
+    {
+
+        lon -= 0.00001f * Input.GetAxis("Vertical");
+        lat += 0.000005f * Input.GetAxis("Horizontal");
+        //36.14011, 128.3974
+        //36.14919, 128.3858
+    }
 }
