@@ -383,8 +383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GPSManager: {fileID: 0}
   cam: {fileID: 0}
-  lat: 36.14295
-  lon: 128.3942
+  locationVec: {x: 0, y: 0, z: 0}
+  checkloc: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
