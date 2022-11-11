@@ -1,9 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Firestore;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity;
 
 public class EventPrefab : MonoBehaviour
 {
@@ -28,6 +26,10 @@ public class EventPrefab : MonoBehaviour
             coor.x = float.Parse((statistics["x"]).ToString());
             coor.y = float.Parse((statistics["y"]).ToString());
             coor.z = float.Parse((statistics["z"]).ToString());
+            //string,Parse(statistics[item].ToString()
+
+            Debug.Log((statistics["x"]).ToString() + (statistics["y"]).ToString() + (statistics["z"]).ToString());
+
             newBuilding(coor);
             
         }
