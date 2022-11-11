@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Plugins/Android/FirebaseApp.androidlib/project.properties.meta
 guid: 957957ddf0f963347a7556c76a055329
+========
+guid: 7cd94a451c13a304e93dbaa50d9b8363
+>>>>>>>> 3a4c85b (텍스트UI/ 버튼UI/ 이미지UI 프리팹 생성):Assets/Plugins/Android/FirebaseApp.androidlib/AndroidManifest.xml.meta
+=======
+guid: 06bc700ab07176343b0727ce94c222ba
+>>>>>>> 3a4c85b (텍스트UI/ 버튼UI/ 이미지UI 프리팹 생성)
 DefaultImporter:
   externalObjects: {}
   userData: 

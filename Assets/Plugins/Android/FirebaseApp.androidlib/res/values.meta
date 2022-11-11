@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 64d33d1a229f1b1429d767324d9a74ec
+=======
+guid: 0138c2225944d644ab47654eb6cfa494
+>>>>>>> 3a4c85b (텍스트UI/ 버튼UI/ 이미지UI 프리팹 생성)
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

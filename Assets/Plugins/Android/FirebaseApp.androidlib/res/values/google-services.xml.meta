@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f63084954eaaf9e41b3b9f7c8551340f
+=======
+guid: 7e8e5729a780b8249a27a75b64de22fb
+>>>>>>> 3a4c85b (텍스트UI/ 버튼UI/ 이미지UI 프리팹 생성)
 DefaultImporter:
   externalObjects: {}
   userData: 
