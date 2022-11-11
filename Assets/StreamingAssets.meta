@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f5afcb826f5433a41996be5a3b146796
+=======
+guid: ca58f4459eb42d546ab57f5421424986
+>>>>>>> feature/11_smallEventScripts
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

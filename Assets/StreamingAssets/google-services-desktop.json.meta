@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 940733577ead27c488246d49b83f38ff
+=======
+guid: 52e9d99c2bd576c40a66806a7e88cac1
+>>>>>>> feature/11_smallEventScripts
 TextScriptImporter:
   externalObjects: {}
   userData: 

@@ -1,0 +1,11 @@
+diff a/Assets/Scenes/KitMapScene.unity b/Assets/Scenes/KitMapScene.unity	(rejected hunks)
+@@ -38,7 +38,9 @@
+    m_ReflectionIntensity: 1
+    m_CustomReflection: {fileID: 0}
+    m_Sun: {fileID: 705507994}
+++<<<<<<< HEAD
+ +  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+++=======
+    m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+ +>>>>>>> fbaabdc (GPS대신 좌표입력을 통해 위치 이동 가능확인// 지도비율은 맞음)
+    m_UseRadianceAmbientProbe: 0
