@@ -12,7 +12,6 @@ using System.Threading;
 
 public class AREventGen : MonoBehaviour
 {
-    public float test;
     //오브젝트-유저 사이의 거리와 오브젝트 생성 여부를 알려주는 text
     public Text text1;
     public Text text2;
@@ -39,11 +38,10 @@ public class AREventGen : MonoBehaviour
     }
     void Start()
     {
-        test = 36.1462f;
-        distance = 1000;
+        distance = 20;
         latLongs = new LatLong[22];
         GetLatLonFromFB();
-        GPSManager = GameObject.Find("GPSManager");
+        GPSManager = GameObject.Find("GPS Manager");
 
         //인디케이터 비활성화
         eventPre.SetActive(false);
@@ -79,7 +77,6 @@ public class AREventGen : MonoBehaviour
         Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
         //Ray에 부딪힌 대상들의 정보를 저장할 리스트 생성
         List<ARRaycastHit> hitInfos = new List<ARRaycastHit>();
-        Debug.Log(place);
 
         //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
         if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
@@ -126,9 +123,7 @@ public class AREventGen : MonoBehaviour
     /**현재위치를 unity coord로 변환한 것을 0.2초마다 가져옴*/
     void GetUNTCoord()
     {
-        
-        //currentLocation = GPSManager.GetComponent<GPS>().unityCoor;
-        currentLocation = GPSEncoder.GPSToUCS(test, 128.3928f);
+        currentLocation = GPSManager.GetComponent<GPS>().unityCoor;
     }
 
     /**firebase에서 latlong를 가져옴*/

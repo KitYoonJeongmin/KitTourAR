@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/10_AREventGen/AREventGen.unity
     guid: fd03d59d4d4f37d458201a8e41a1d187
+  - enabled: 1
+    path: Assets/Scenes/KitMapScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 68364e0eed003544ca43a562e3dc0b28, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: aacaf59405dce9b41aa38bd80538e341, type: 2}
