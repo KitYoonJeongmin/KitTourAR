@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class SmallEventManager : MonoBehaviour
 {
     public DBTextManager textManager;
-    public GameObject textUi;        //È­¸é¿¡ Ãâ·ÂµÉ canvas(UI)
-    public Text eventText;           //text event(canvas ³»ºÎ text(Legacy) ¿¬°á)
+    public GameObject textUi;        //í™”ë©´ì— ì¶œë ¥ë  canvas(UI)
+    public Text eventText;           //text event(canvas ë‚´ë¶€ text(Legacy) ì—°ê²°)
 
-    public GameObject scanPlace;     //¾î´À Àå¼ÒÀÇ ÀÌº¥Æ®¸¦ Ãâ·ÂÇÒÁö ÁöÁ¤
-    public bool isView;              //ÀÌº¥Æ®°¡ Ãâ·Â ÁßÀÎÁö ¿©ºÎ È®ÀÎ
+    public GameObject scanPlace;     //ì–´ëŠ ì¥ì†Œì˜ ì´ë²¤íŠ¸ë¥¼ ì¶œë ¥í• ì§€ ì§€ì •
+    public bool isView;              //ì´ë²¤íŠ¸ê°€ ì¶œë ¥ ì¤‘ì¸ì§€ ì—¬ë¶€ í™•ì¸
     public int textAryIndex;
 
     public void View(GameObject place)
@@ -32,7 +32,7 @@ public class SmallEventManager : MonoBehaviour
         textUi.SetActive(isView);
     }
 
-    public void TextView(string documentId) //ÇÔ¼ö ´Ù¸¥ ½ºÅ©¸³Æ®¿¡¼­ »ç¿ëÇÏ·Á°í publicÀ¸·Î ¹Ù²ãÁá½À´Ï´Ù.
+    public void TextView(string documentId) //í•¨ìˆ˜ ë‹¤ë¥¸ ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì‚¬ìš©í•˜ë ¤ê³  publicìœ¼ë¡œ ë°”ê¿”ì¤¬ìŠµë‹ˆë‹¤.
     {
         int textLen = textManager.textNum(documentId);
         string eventData = textManager.GetText(documentId, textAryIndex);
@@ -41,11 +41,12 @@ public class SmallEventManager : MonoBehaviour
         {
             isView = false;
             textAryIndex = 0;
-            textUi.SetActive(isView); //text ´õÀÌ»ó º¼°Å ¾øÀ¸¸é UI¹Ù·Î ºñÈ°¼ºÈ­ ½ÃÄÑÁá½À´Ï´Ù.
+            textUi.SetActive(isView); //text ë”ì´ìƒ ë³¼ê±° ì—†ìœ¼ë©´ UIë°”ë¡œ ë¹„í™œì„±í™” ì‹œì¼œì¤¬ìŠµë‹ˆë‹¤.
             return;
         }
 
         eventText.text = eventData;
+        eventText.text = eventText.text.Replace("\\n", "\n");   // ì¤„ë°”ê¿ˆ ìˆ˜ì •
         isView = true;
 
         textAryIndex++;
