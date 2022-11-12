@@ -15,7 +15,7 @@ public class moveCharactor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GPSManager = GameObject.Find("GPSManager");
+        GPSManager = GameObject.Find("GPSManager");
         GetLatitude();
     }
     // Update is called once per frame
@@ -33,8 +33,8 @@ public class moveCharactor : MonoBehaviour
     }
     void GetLatitude()
     {
-        //locationVec = GPSManager.GetComponent<GPS>().unityCoor;
-        locationVec = GPSEncoder.GPSToUCS(lat, lon);
+        locationVec = GPSManager.GetComponent<GPS>().unityCoor;
+        //locationVec = GPSEncoder.GPSToUCS(lat, lon);
     }
     void Move()
     {
