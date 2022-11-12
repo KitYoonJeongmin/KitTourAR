@@ -40,9 +40,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 370
     width: 460.66663
     height: 209.33337
+=======
+    y: 194.66667
+    width: 334.00003
+    height: 378
+>>>>>>> 11_switchSceneMap
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 14}
@@ -67,6 +73,7 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 546.6667
     y: 0
     width: 460.66663
@@ -75,6 +82,16 @@ MonoBehaviour:
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
   controlID: 17
+=======
+    x: 370.66666
+    y: 0
+    width: 334.00003
+    height: 572.6667
+  m_MinSize: {x: 100, y: 200}
+  m_MaxSize: {x: 8096, y: 16192}
+  vertical: 1
+  controlID: 95
+>>>>>>> 11_switchSceneMap
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +167,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 16
+=======
+  controlID: 89
+>>>>>>> 11_switchSceneMap
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,10 +210,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 460.66663
     height: 370
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    width: 334.00003
+    height: 194.66667
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> 11_switchSceneMap
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -215,8 +243,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1007.3333
     y: 0
+<<<<<<< HEAD
     width: 258.00006
     height: 579.3334
+=======
+    width: 560.6667
+    height: 572.6667
+>>>>>>> 11_switchSceneMap
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
@@ -235,23 +268,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 546.6667
     height: 579.3334
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
+=======
+    width: 370.66666
+    height: 572.6667
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+>>>>>>> 11_switchSceneMap
   m_Panes:
   - {fileID: 16}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -300,10 +341,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 554
     y: 80
     width: 458.66663
     height: 349
+=======
+    x: 378
+    y: 80
+    width: 332.00003
+    height: 173.66667
+>>>>>>> 11_switchSceneMap
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -311,9 +359,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: ecdeffff38dfffff88e1ffff96e1ffff82e3ffffc8e3ffff1ce6ffff2ee6ffffece7ffff32e8ffff86eaffff98eaffff30fbffffa45f0000
+=======
+      m_SelectedIDs: b8cdffff
+      m_LastClickedID: -12872
+      m_ExpandedIDs: c4cdffffcaf9ffff22fbffff0064000018640000
+>>>>>>> 11_switchSceneMap
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -398,10 +452,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 554
     y: 450
     width: 458.66663
     height: 188.33337
+=======
+    x: 378
+    y: 274.6667
+    width: 332.00003
+    height: 357
+>>>>>>> 11_switchSceneMap
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -419,22 +480,37 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts
+=======
+    - Assets/Scenes
+>>>>>>> 11_switchSceneMap
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Scripts
+=======
+  - Assets/Scenes
+>>>>>>> 11_switchSceneMap
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Yoonjeongmin\KitTourAR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 147.50015}
     m_SelectedIDs: 58600000
     m_LastClickedID: 24664
     m_ExpandedIDs: 000000003c60000058600000ffffff7f
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 98630000
+    m_LastClickedID: 25496
+    m_ExpandedIDs: 000000007c63000092630000ffffff7f
+>>>>>>> 11_switchSceneMap
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -462,7 +538,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003c600000
+=======
+    m_ExpandedIDs: 000000007c630000
+>>>>>>> 11_switchSceneMap
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,7 +597,11 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
+<<<<<<< HEAD
   m_DirectoriesAreaWidth: 130
+=======
+  m_DirectoriesAreaWidth: 228.00003
+>>>>>>> 11_switchSceneMap
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -540,7 +624,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.3333335
     y: 80
+<<<<<<< HEAD
     width: 545.6667
+=======
+    width: 369.66666
+>>>>>>> 11_switchSceneMap
     height: 551.6667
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -588,16 +676,24 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 545.6667
       height: 530.6667
     m_Scale: {x: 0.41458336, y: 0.41458336}
     m_Translation: {x: 272.83334, y: 265.33334}
+=======
+      width: 369.66666
+      height: 530.6667
+    m_Scale: {x: 0.41458336, y: 0.41458336}
+    m_Translation: {x: 184.83333, y: 265.33334}
+>>>>>>> 11_switchSceneMap
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -658.09045
       y: -640
       width: 1316.1809
@@ -605,6 +701,15 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 0.41458336
   m_LastWindowPixelSize: {x: 818.5, y: 827.5}
+=======
+      x: -445.8291
+      y: -640
+      width: 891.6582
+      height: 1280
+    m_MinimalGUI: 1
+  m_defaultScale: 0.41458336
+  m_LastWindowPixelSize: {x: 554.5, y: 827.5}
+>>>>>>> 11_switchSceneMap
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -632,8 +737,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.3333335
     y: 80
+<<<<<<< HEAD
     width: 545.6667
     height: 558.3334
+=======
+    width: 369.66666
+    height: 551.6667
+>>>>>>> 11_switchSceneMap
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -698,9 +808,9 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 67.5, y: 86}
+      snapOffset: {x: -138.5, y: 86}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 1
       id: Orientation
       index: 0
       layout: 4
@@ -835,9 +945,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
+=======
+    m_Target: {x: 70.9993, y: 105.06448, z: 136.34286}
+    speed: 2
+    m_Value: {x: 70.9993, y: 105.06448, z: 136.34286}
+>>>>>>> 11_switchSceneMap
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -884,6 +1000,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.016662166, y: -0.05836414, z: -0.0009735703, w: -0.9981707}
     speed: 2
     m_Value: {x: 0.01666192, y: -0.058363277, z: -0.0009735559, w: -0.9981559}
@@ -891,6 +1008,15 @@ MonoBehaviour:
     m_Target: 10
     speed: 2
     m_Value: 10
+=======
+    m_Target: {x: -0.24954389, y: -0.06617863, z: 0.017104123, w: -0.96596766}
+    speed: 2
+    m_Value: {x: -0.25090784, y: -0.070496045, z: 0.01833232, w: -0.9652665}
+  m_Size:
+    m_Target: 149.36769
+    speed: 2
+    m_Value: 156.40596
+>>>>>>> 11_switchSceneMap
   m_Ortho:
     m_Target: 0
     speed: 2
