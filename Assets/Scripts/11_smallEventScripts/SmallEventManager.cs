@@ -8,15 +8,24 @@ public class SmallEventManager : MonoBehaviour
     public DBTextManager textManager;
     public GameObject textUi;        //화면에 출력될 canvas(UI)
     public Text eventText;           //text event(canvas 내부 text(Legacy) 연결)
+    public GameObject imageUi;       //image event (canvas 내부 image 연결)
 
     public GameObject scanPlace;     //어느 장소의 이벤트를 출력할지 지정
-    public bool isView;              //이벤트가 출력 중인지 여부 확인
+    public bool isView;              //text이벤트가 출력 중인지 여부 확인
     public int textAryIndex;
 
+    public Sprite[] imgArray;       //이미지 넣고 start()에서 imgDetectWord("[키워드]",imgArray의index);작성해주세요.
+    private Dictionary<string,int> imgDetectWord = new Dictionary<string, int>(); //이미지 출력할 단어(trigger)
+
+    void Start()
+    {
+        imgDetectWord.Add("휴먼",0);
+        imgDetectWord.Add("너굴맨",1);
+    }
     public void View(GameObject place)
     {
 
-        if(isView)
+        if (isView)
         {
             isView = false;
         }
@@ -36,7 +45,7 @@ public class SmallEventManager : MonoBehaviour
     {
         int textLen = textManager.textNum(documentId);
         string eventData = textManager.GetText(documentId, textAryIndex);
-        
+
         if (textAryIndex == textLen)
         {
             isView = false;
@@ -44,11 +53,30 @@ public class SmallEventManager : MonoBehaviour
             textUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
             return;
         }
+        foreach (KeyValuePair<string, int> word in imgDetectWord) // text에 img를 출력할 단어가 있는지 검사
+        {
+            if (eventData.Contains(word.Key)) //text에 img를 출력할 단어가 있다면
+            {
+                ImageView(word.Key); // 해당 단어에 적합한 이미지 출력
+                break;
+                //isImage = true; //이미지 출력중
+            }
+            imageUi.SetActive(false); //이미지 항상 비활성화
+
+        }
 
         eventText.text = eventData;
-        eventText.text = eventText.text.Replace("\\n", "\n");   // 줄바꿈 수정
+        eventText.text = eventText.text.Replace("\\n", "\n"); // 줄바꿈 수정
+
         isView = true;
 
         textAryIndex++;
+    }
+
+    void ImageView(string imageWord)
+    {
+        imgDetectWord.TryGetValue(imageWord, out int imageNum);
+        imageUi.GetComponent<Image>().sprite = imgArray[imageNum];
+        imageUi.SetActive(true);
     }
 }
