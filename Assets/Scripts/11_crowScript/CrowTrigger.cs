@@ -13,10 +13,11 @@ public class CrowTrigger : MonoBehaviour
     {
         if (IsCatch.crowMap == true)
         {
+            IsCatch.crowImgNum = crowIndex;
             gameObject.SetActive(false);
             return;
         }
 
-        SceneManager.LoadScene(0);      // 0 대신 삼족오 이벤트 씬 넣어주기
+        SceneManager.LoadScene("SamJocUI");      // 0 대신 삼족오 이벤트 씬 넣어주기
     }
 }

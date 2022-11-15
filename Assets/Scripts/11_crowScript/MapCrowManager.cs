@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class MapCrowManager : MonoBehaviour
 {
-    CrowTrigger crowTrigger;
-
-    private Button crowBtn;
+    public CrowTrigger crowTrigger;
+    public GameObject button;
+    //public Button crowBtn;
     public Image image;
 
     [SerializeField]
@@ -15,16 +15,14 @@ public class MapCrowManager : MonoBehaviour
 
     void Start()
     {
-        crowBtn = transform.Find("Crow").GetComponent<Button>();
-        crowBtn.interactable = false;
-    }
+        //crowBtn = transform.Find("Crow").GetComponent<Button>();
+        button.SetActive(false);
 
-    void Update()
-    {
         if (IsCatch.crowMap == true)
         {
-            crowBtn.interactable = true;
-            image.sprite = sprites[crowTrigger.crowIndex];
+            Debug.Log("hi");
+            button.SetActive(true);
+            image.sprite = sprites[IsCatch.crowImgNum];
         }
     }
 }

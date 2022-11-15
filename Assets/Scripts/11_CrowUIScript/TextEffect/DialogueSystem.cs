@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
+    [SerializeField]
+    public bool isCatch;
+
     public Text txtSentence;
     public GameObject ButtonLayout;
     Queue<string> sentences = new Queue<string>();  //Dialogue에 있는 List앞에서 순차적으로 보여주기 위해 자료형 큐 사용
@@ -27,7 +30,6 @@ public class DialogueSystem : MonoBehaviour
     }
     public void Begin(Dialogue info)
     {
-
         sentences.Clear();
 
         //foreach로 sentences를 돈다
@@ -35,6 +37,10 @@ public class DialogueSystem : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
+        if (IsCatch.crowMap == true)
+            Debug.Log("1");
+        else Debug.Log("2");
+
         Next();
     }
 
@@ -45,7 +51,9 @@ public class DialogueSystem : MonoBehaviour
         {
             if (check == 0)
             {
+
                 End();
+
                 return;
             }
             else

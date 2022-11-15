@@ -5,9 +5,10 @@ using UnityEngine;
 public class IsCatch : MonoBehaviour
 {
     public static bool crowMap;
+    public static int crowImgNum;
 
     void Awake()
     {
-        crowMap = false;
+        //crowMap = false;
     }
 }

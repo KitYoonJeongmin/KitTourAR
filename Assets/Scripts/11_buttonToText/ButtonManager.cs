@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject btnObj = null;
-    public SmallEventManager smallEventManager;
+    //public SmallEventManager smallEventManager;
     Button btn;
 
     void Start()
