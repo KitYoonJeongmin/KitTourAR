@@ -7,18 +7,27 @@ public class YesNoSystem : MonoBehaviour
 {
     [SerializeField]
     public bool isCatch;
-
+    
     public GameObject ButtonLayout;
     public Text txtSentence;
-    Queue<string> sentences = new Queue<string>();  //Dialogue¿¡ ÀÖ´Â List¾Õ¿¡¼­ ¼øÂ÷ÀûÀ¸·Î º¸¿©ÁÖ±â À§ÇØ ÀÚ·áÇü Å¥ »ç¿ë
+    Queue<string> sentences = new Queue<string>();  //Dialogueï¿½ï¿½ ï¿½Ö´ï¿½ Listï¿½Õ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½ï¿½ï¿½ Å¥ ï¿½ï¿½ï¿½
     public Dialogue info;
 
+
+    private void Start()
+    {
+        
+        isCatch = false;
+    }
     public void Trigger()
     {
-        //½Ã½ºÅÛ¿¡ Á¢±ÙÇØ¼­ Begin¿¡ ÇöÀç µé°í ÀÖ´Â Á¤º¸¸¦ ³Ñ°ÜÁÜ
+        
+        Debug.Log("111");
+        //ï¿½Ã½ï¿½ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ Beginï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ°ï¿½ï¿½ï¿½
         var system = FindObjectOfType<DialogueSystem>();
         ButtonLayout.SetActive(false);
-        IsCatch.crowMap = isCatch;
+        system.Begin(info);
+        system.isSelect = true;
 
         //Debug.Log("HI"); Debug.Log("HI");
         system.Begin(info);
@@ -26,7 +35,11 @@ public class YesNoSystem : MonoBehaviour
     public void Begin(Dialogue info)
     {
 
-        //foreach·Î sentences¸¦ µ·´Ù
+
+        sentences.Clear();
+        //isCatch.crowMap = isCatch;
+
+        //foreachï¿½ï¿½ sentencesï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         //foreach (var sentence in info.sentences)
         //{
         //    sentences.Enqueue(sentence);

@@ -6,62 +6,62 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
+
     public Text txtSentence;
     public GameObject ButtonLayout;
-    Queue<string> sentences = new Queue<string>();  //Dialogue¿¡ ÀÖ´Â List¾Õ¿¡¼­ ¼øÂ÷ÀûÀ¸·Î º¸¿©ÁÖ±â À§ÇØ ÀÚ·áÇü Å¥ »ç¿ë
+    Queue<string> sentences = new Queue<string>();  //Dialogueï¿½ï¿½ ï¿½Ö´ï¿½ Listï¿½Õ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½ï¿½ï¿½ Å¥ ï¿½ï¿½ï¿½
     public Dialogue info;
-    int check = 0;  //ÇÑ¹ø ½ÇÇàÇß´ÂÁö Ã¼Å©ÇÏ´Â º¯¼ö
+    public bool isSelect;
+    int check=0;
 
     private void Start()
     {
+        isSelect = false;
         ButtonLayout.SetActive(false);
-        Invoke("Trigger", 2);
+        Begin(info);
     }
-    public void Trigger()
-    {
-        //½Ã½ºÅÛ¿¡ Á¢±ÙÇØ¼­ Begin¿¡ ÇöÀç µé°í ÀÖ´Â Á¤º¸¸¦ ³Ñ°ÜÁÜ
-        var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(info);
 
-    }
     public void Begin(Dialogue info)
     {
-
         sentences.Clear();
 
-        //foreach·Î sentences¸¦ µ·´Ù
-        foreach(var sentence in info.sentences)
+        //foreachï¿½ï¿½ sentencesï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        foreach (var sentence in info.sentences)
         {
             sentences.Enqueue(sentence);
+
         }
-        Next();
+        Invoke("Next", 2);
     }
 
-    public void Next()  //´ÙÀ½ ¹®Àå È£Ãâ
+    public void Next()  //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
     {
-        //ÀÌÁ¦ sentences°¡ ¾ø´Ù¸é
-        if(sentences.Count==0)
+        var system = FindObjectOfType<YesNoSystem>();
+
+        //ï¿½ï¿½ï¿½ï¿½ sentencesï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½
+        if (sentences.Count==0)
         {
-            if (check == 0)
-            {
-
-                End();
-
-                return;
-            }
-            else
+            if (isSelect)
             {
 
                 Invoke("SceneChange", 1);
                 return;
             }
+            if (check == 0)
+            {
+                End();
+                return;
+            }
+            
+            
         }
+
         txtSentence.text = string.Empty;
         StopAllCoroutines();
         StartCoroutine(Typing(sentences.Dequeue()));
         
     }
-    IEnumerator Typing(string sentence) //Å¸ÀÌÇÎ È¿°úÃ³·³ ÅØ½ºÆ® Ãâ·Â
+    IEnumerator Typing(string sentence) //Å¸ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
     {
         foreach (var letter in sentence)
         {
