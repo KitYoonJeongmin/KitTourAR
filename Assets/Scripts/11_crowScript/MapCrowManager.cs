@@ -22,6 +22,7 @@ public class MapCrowManager : MonoBehaviour
         {
             Debug.Log("hi");
             button.SetActive(true);
+            Debug.Log(IsCatch.crowImgNum.ToString());
             image.sprite = sprites[IsCatch.crowImgNum];
         }
     }

@@ -13,15 +13,9 @@ public class YesNoSystem : MonoBehaviour
     Queue<string> sentences = new Queue<string>();  //Dialogue�� �ִ� List�տ��� ���������� �����ֱ� ���� �ڷ��� ť ���
     public Dialogue info;
 
-
-    private void Start()
-    {
-        
-        isCatch = false;
-    }
     public void Trigger()
     {
-        
+        IsCatch.crowMap = isCatch;
         Debug.Log("111");
         //�ý��ۿ� �����ؼ� Begin�� ���� ��� �ִ� ������ �Ѱ���
         var system = FindObjectOfType<DialogueSystem>();

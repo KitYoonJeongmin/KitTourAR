@@ -52,8 +52,8 @@ public class DialogueSystem : MonoBehaviour
                 End();
                 return;
             }
-            
-            
+
+            return;
         }
 
         txtSentence.text = string.Empty;

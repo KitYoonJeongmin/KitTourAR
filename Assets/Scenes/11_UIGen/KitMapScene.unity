@@ -859,17 +859,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrowEventTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 414
+      value: 325.2
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 435
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
