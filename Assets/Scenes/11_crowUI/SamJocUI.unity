@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Next
       objectReference: {fileID: 0}
+    - target: {fileID: 4030428064546606444, guid: 6ae0e568bbe8e2e4fa860a9cd5fe45c2, type: 3}
+      propertyPath: isCatch
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4030428064636612459, guid: 6ae0e568bbe8e2e4fa860a9cd5fe45c2, type: 3}
       propertyPath: m_Name
       value: CrowUICanvas2

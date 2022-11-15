@@ -15,7 +15,6 @@ public class SmallEventManager : MonoBehaviour
 
     public void View(GameObject place)
     {
-
         if(isView)
         {
             isView = false;
@@ -36,7 +35,9 @@ public class SmallEventManager : MonoBehaviour
     {
         int textLen = textManager.textNum(documentId);
         string eventData = textManager.GetText(documentId, textAryIndex);
-        
+        Debug.Log(textAryIndex.ToString());
+        Debug.Log(eventData);
+
         if (textAryIndex == textLen)
         {
             isView = false;
@@ -46,6 +47,7 @@ public class SmallEventManager : MonoBehaviour
         }
 
         eventText.text = eventData;
+        
         eventText.text = eventText.text.Replace("\\n", "\n");   // 줄바꿈 수정
         isView = true;
 

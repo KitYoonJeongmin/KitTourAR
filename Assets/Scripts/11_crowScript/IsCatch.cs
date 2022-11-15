@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class IsCatch : MonoBehaviour
 {
-    public static bool crowMap;
+    public static int crowMap;
     public static int crowImgNum;
 }

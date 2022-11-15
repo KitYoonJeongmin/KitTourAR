@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class YesNoSystem : MonoBehaviour
 {
     [SerializeField]
-    public bool isCatch;
+    public int isCatch;
     
     public GameObject ButtonLayout;
     public Text txtSentence;

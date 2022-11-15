@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2951323330409733628}
   - component: {fileID: 2951323330409733631}
   m_Layer: 5
-  m_Name: DialogText (Legacy)
+  m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,11 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "<\uC120\uBC30>\n1\uCE35 \uAE00\uB85C\uBC8C\uAD00 \uB3C4\uC11C\uAD00\uC5D0\uC11C
-    \uACF5\uBD80\uD560 \uC218\uB3C4 \uC788\uC5B4.\n\uAE00\uB85C\uBC8C\uAD00 \uB3C4\uC11C\uAD00\uC740
-    17\uC2DC\uAE4C\uC9C0 \uC774\uC6A9 \uAC00\uB2A5\uD558\uACE0 \uC608\uC57D\uC740
-    \uB530\uB85C \uC548 \uD574\uB3C4 \uAD1C\uCC2E\uC544.\n\uC544! \uC2DC\uD5D8\uAE30\uAC04\uC5D0\uB294
-    24\uC2DC\uAC04 \uC6B4\uC601\uD558\uB2C8\uAE4C \uCC38\uACE0\uD574!"
+  m_Text: 
 --- !u!1 &2951323331214740627
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2951323331495674820
 RectTransform:
   m_ObjectHideFlags: 0

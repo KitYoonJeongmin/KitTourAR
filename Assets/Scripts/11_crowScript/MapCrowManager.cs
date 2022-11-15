@@ -18,7 +18,7 @@ public class MapCrowManager : MonoBehaviour
         //crowBtn = transform.Find("Crow").GetComponent<Button>();
         button.SetActive(false);
 
-        if (IsCatch.crowMap == true)
+        if (IsCatch.crowMap == 1)
         {
             Debug.Log("hi");
             button.SetActive(true);

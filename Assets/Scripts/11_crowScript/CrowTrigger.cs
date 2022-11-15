@@ -5,19 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class CrowTrigger : MonoBehaviour
 {
+    private float fDestroyTime = 100f;
+    private float fTickTime;
+
     CrowImgAry crowImgAry;
 
     public int crowIndex;
 
+    private void Awake()
+    {
+        if (IsCatch.crowMap == 1 && IsCatch.crowMap == 2)
+            gameObject.SetActive(false);
+
+        fTickTime = 0;
+
+    }
+
+    private void Update()
+    {
+        fTickTime += Time.deltaTime;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         IsCatch.crowImgNum = crowIndex;
+        gameObject.SetActive(false);
 
-        if (IsCatch.crowMap == true)
+        if (IsCatch.crowMap == 2)
         {
-            gameObject.SetActive(false);
-            return;
+            if (fTickTime >= fDestroyTime)
+                gameObject.SetActive(true);
         }
+
         SceneManager.LoadScene("SamJocUI");      // 0 대신 삼족오 이벤트 씬 넣어주기
     }
 }

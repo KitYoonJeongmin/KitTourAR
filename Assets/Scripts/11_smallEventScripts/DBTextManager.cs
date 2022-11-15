@@ -9,6 +9,7 @@ public class DBTextManager : MonoBehaviour
 {
     Dictionary<string, string[]> textData;  //smallEvent에 직접적으로 사용될 text 딕셔너리입니다.
     List<object> objList;
+    List<object> subObjList;
 
     void Awake()
     {
@@ -57,7 +58,10 @@ public class DBTextManager : MonoBehaviour
                 subCollRef = collRef.Document(document.Id).Collection("button");
                 subref = true;
             }
-            catch {}
+            catch 
+            {
+                //Debug.Log(document.Id + " 하위 문서 데이터 불러오기 실패");
+            }
 
             if (subref)
             {
@@ -81,15 +85,18 @@ public class DBTextManager : MonoBehaviour
 
         foreach (DocumentSnapshot document in snapshot.Documents)
         {
-            objList = new List<object>();
+            subObjList = new List<object>();
 
             Dictionary<string, object> documentDictionary = document.ToDictionary();
             //Debug.Log(documentDictionary["name"].ToString() + "\n");
 
-            try     { objList = (List<object>)documentDictionary["text"]; }
-            catch   {}
+            try     { subObjList = (List<object>)documentDictionary["text"]; }
+            catch   
+            {
+                Debug.Log(documentDictionary["name"].ToString() + " 텍스트arr 가져오기 실패");
+            }
 
-            List<string> strList = objList.Select(s => (string)s).ToList();
+            List<string> strList = subObjList.Select(s => (string)s).ToList();
             //foreach (var i in strList)    Debug.Log(i);   //strList 데이터 출력(확인용)
 
             textData.Add(document.Id, strList.ToArray());

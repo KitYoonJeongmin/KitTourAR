@@ -38,7 +38,7 @@ public class SmallEventStart : MonoBehaviour
                     //현재 위치의 document id 들고옴
                     GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<AREventGen>().place;
                     //UI띄움
-                    if(!smallEventManager.isView) // UI가 비활성 상태면 띄우기
+                    if (!smallEventManager.isView) // UI가 비활성 상태면 띄우기
                         smallEventManager.View(GameObject.Find("smallEvent"));
                     else // 활성상태면 index증가해서 다음 text띄우기
                         smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
