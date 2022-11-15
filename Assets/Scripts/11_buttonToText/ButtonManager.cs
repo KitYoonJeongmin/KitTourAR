@@ -6,8 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonManager : MonoBehaviour
 {
-    public GameObject btnObj = null;
-    //public SmallEventManager smallEventManager;
+    public GameObject btnObj;
     Button btn;
 
     void Start()
@@ -16,8 +15,10 @@ public class ButtonManager : MonoBehaviour
         btnObj = transform.Find("BtnManager").gameObject;
 
         btnObj.SetActive(false);
-
-        if (btn!=null)
+    }
+    void Update()
+    {
+        if (btn != null)
         {
             btn.onClick.AddListener(TextEvent);
         }
