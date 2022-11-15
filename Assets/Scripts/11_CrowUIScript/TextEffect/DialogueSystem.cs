@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DialogueSystem : MonoBehaviour
 {
+
     public Text txtSentence;
     public GameObject ButtonLayout;
     Queue<string> sentences = new Queue<string>();  //Dialogue에 있는 List앞에서 순차적으로 보여주기 위해 자료형 큐 사용

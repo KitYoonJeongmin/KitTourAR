@@ -33,6 +33,7 @@ public class YesNoSystem : MonoBehaviour
     public void Begin(Dialogue info)
     {
 
+
         sentences.Clear();
         //isCatch.crowMap = isCatch;
 
