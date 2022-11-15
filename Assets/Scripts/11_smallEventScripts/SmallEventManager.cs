@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SmallEventManager : MonoBehaviour
 {
     public DBTextManager textManager;
+    public GameObject btnUi;
     public GameObject textUi;        //화면에 출력될 canvas(UI)
     public Text eventText;           //text event(canvas 내부 text(Legacy) 연결)
 
@@ -45,12 +46,28 @@ public class SmallEventManager : MonoBehaviour
             textUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
             return;
         }
-
-        eventText.text = eventData;
+        else if(textLen == 0)
+        {
+            btnUi.SetActive(isView);
+            foreach(Transform child in btnUi.transform)
+            {
+                if(child.name.Contains(documentId))
+                {
+                    GameObject.Find(child.name).SetActive(true);
+                    continue;
+                }
+                GameObject.Find(child.name).SetActive(false);
+            }
+        }
+        else
+        {
+            eventText.text = eventData;
         
-        eventText.text = eventText.text.Replace("\\n", "\n");   // 줄바꿈 수정
-        isView = true;
+            eventText.text = eventText.text.Replace("\\n", "\n");   // 줄바꿈 수정
+            isView = true;
 
-        textAryIndex++;
+            textAryIndex++;
+        }
+        
     }
 }
