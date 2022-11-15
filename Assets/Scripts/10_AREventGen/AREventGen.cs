@@ -123,7 +123,7 @@ public class AREventGen : MonoBehaviour
     /**현재위치를 unity coord로 변환한 것을 0.2초마다 가져옴*/
     void GetUNTCoord()
     {
-        currentLocation = GPSManager.GetComponent<GPS>().unityCoor;
+        currentLocation = GPS.unityCoor;
     }
 
     /**firebase에서 latlong를 가져옴*/

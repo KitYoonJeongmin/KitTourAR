@@ -22,7 +22,7 @@ public class GPS : MonoBehaviour
     public float latitude = 0;
     public float longitude = 0;
 
-    public Vector3 unityCoor;
+    static public Vector3 unityCoor;
     float waitTime = 0;
 
     public bool receiveGPS = false;

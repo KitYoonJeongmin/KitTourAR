@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class moveCharactor : MonoBehaviour
 {
-    public GameObject GPSManager;
-    public Camera cam;
     private Vector3 locationVec;
     private float moveSpeed = 4.0f;
     private float turnSpeed = 4.0f;
@@ -13,10 +11,10 @@ public class moveCharactor : MonoBehaviour
     public float lon = 128.394272f;
     //private float mov_speed = 10.0f;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        GPSManager = GameObject.Find("GPSManager");
-        GetLatitude();
+        locationVec = GPS.unityCoor;
+        transform.position = locationVec;
     }
     // Update is called once per frame
     void Update()
@@ -29,11 +27,11 @@ public class moveCharactor : MonoBehaviour
     {
         Move();
         GetLatitude();
-        transform.position = locationVec;
+        transform.position = Vector3.Lerp(transform.position, locationVec, 0.1f);
     }
     void GetLatitude()
     {
-        locationVec = GPSManager.GetComponent<GPS>().unityCoor;
+        locationVec = GPS.unityCoor;
         //locationVec = GPSEncoder.GPSToUCS(lat, lon);
     }
     void Move()
@@ -44,7 +42,7 @@ public class moveCharactor : MonoBehaviour
     void mouseMove()
     {
         float yRotateSize = Input.GetAxis("Mouse X") * turnSpeed;
-        float yRotate = transform.eulerAngles.y + yRotateSize;
+        float yRotate = transform.eulerAngles.y + yRotateSize*Time.deltaTime*5;
         transform.eulerAngles = new Vector3(0, yRotate, 0);
     }
     void KeybordMove()
