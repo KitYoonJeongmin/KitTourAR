@@ -10,51 +10,51 @@ public class DialogueSystem : MonoBehaviour
     public GameObject ButtonLayout;
     Queue<string> sentences = new Queue<string>();  //Dialogue에 있는 List앞에서 순차적으로 보여주기 위해 자료형 큐 사용
     public Dialogue info;
-    int check = 0;  //한번 실행했는지 체크하는 변수
+    public bool isSelect;
+    int check=0;
 
-    
     private void Start()
     {
+        isSelect = false;
         ButtonLayout.SetActive(false);
-        Invoke("Trigger", 2);
+        Begin(info);
     }
-    public void Trigger()
-    {
-        //시스템에 접근해서 Begin에 현재 들고 있는 정보를 넘겨줌
-        var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(info);
 
-    }
     public void Begin(Dialogue info)
     {
-
         sentences.Clear();
 
         //foreach로 sentences를 돈다
-        foreach(var sentence in info.sentences)
+        foreach (var sentence in info.sentences)
         {
             sentences.Enqueue(sentence);
+
         }
-        Next();
+        Invoke("Next", 2);
     }
 
     public void Next()  //다음 문장 호출
     {
+        var system = FindObjectOfType<YesNoSystem>();
+
         //이제 sentences가 없다면
-        if(sentences.Count==0)
+        if (sentences.Count==0)
         {
-            if (check == 0)
-            {
-                End();
-                return;
-            }
-            else
+            if (isSelect)
             {
 
                 Invoke("SceneChange", 1);
                 return;
             }
+            if (check == 0)
+            {
+                End();
+                return;
+            }
+            
+            
         }
+
         txtSentence.text = string.Empty;
         StopAllCoroutines();
         StartCoroutine(Typing(sentences.Dequeue()));
