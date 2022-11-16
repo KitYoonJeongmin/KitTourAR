@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/11_UIGen/GenUI 1.unity
-    guid: b51d2c52af9ad5d4ea3a48325018009a
-  - enabled: 1
     path: Assets/Scenes/11_UIGen/KitMapScene.unity
     guid: f5c45231b215c22409f7f1add9cb009f
+  - enabled: 1
+    path: Assets/Scenes/11_UIGen/GenUI 1.unity
+    guid: b51d2c52af9ad5d4ea3a48325018009a
   - enabled: 1
     path: Assets/Scenes/11_crowUI/SamJocUI.unity
     guid: 44ac52d0961421f4ca7f9c0d78d16785

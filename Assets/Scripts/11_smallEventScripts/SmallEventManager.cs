@@ -44,7 +44,6 @@ public class SmallEventManager : MonoBehaviour
 
     public void TextView(string documentId) //함수 다른 스크립트에서 사용하려고 public으로 바꿔줬습니다.
     {
-        Debug.Log(documentId);
         int textLen = textManager.textNum(documentId);
         string eventData = textManager.GetText(documentId, textAryIndex);
 
@@ -58,7 +57,6 @@ public class SmallEventManager : MonoBehaviour
             }
             else if(gameObject.name.Contains("Btn"))
             {
-                Debug.Log("------------btn remake----------");
                 isBtnView = true;
                 btnUi.SetActive(isBtnView);
             }
@@ -85,6 +83,12 @@ public class SmallEventManager : MonoBehaviour
         isView = true;
 
         textAryIndex++;
+    }
+    void ImageView(string imageWord)
+    {
+        imgDetectWord.TryGetValue(imageWord, out int imageNum);
+        imageUi.GetComponent<Image>().sprite = imgArray[imageNum];
+        imageUi.SetActive(true);
     }
     public void Btn(string documentId)
     {
