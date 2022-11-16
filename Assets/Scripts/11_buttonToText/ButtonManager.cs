@@ -44,8 +44,8 @@ public class ButtonManager : MonoBehaviour
         if (btnObj.transform.GetComponent<PlaceInfo>().documentId == "restaurant")
         {
             textCanvas.transform.Find("TextImage").Find("DialogText").GetComponent<Text>().text = "ø¿¥√¿∫ πª ∏‘¡ˆ?";
-            layoutSetting.layout[1].SetActive(true);
+            LayoutSetting.layoutIndex = 1;
+            layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(true);
         }
-        
     }
 }

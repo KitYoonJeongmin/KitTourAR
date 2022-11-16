@@ -30,16 +30,18 @@ public class ChildTextEvent : MonoBehaviour
         {
             if (!smallEventManager.isView)
             {
-                /*
                 if (noLoop == true)  // 작은 이벤트 텍스트ui를 다 클릭하면 다시 안 뜨게 함(작은이벤트 무한클릭 방지)
                 {
                     noLoop = false;
                     gameObject.SetActive(false);
+                    if (LayoutSetting.layoutIndex == 1)
+                        LayoutSetting.layoutIndex = 0;
+
+                    layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(true);
                     return;
                 }
-                */
-
                 smallEventManager.View(gameObject);
+                //layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(true);
             }
 
             else
@@ -57,14 +59,14 @@ public class ChildTextEvent : MonoBehaviour
         {
             if (!smallEventManager.isView)
             {
-
+                
                 if (noLoop == true)  // 작은 이벤트 텍스트ui를 다 클릭하면 다시 안 뜨게 함(작은이벤트 무한클릭 방지)
                 {
                     noLoop = false;
                     gameObject.SetActive(false);
                     return;
                 }
-
+                
                 smallEventManager.View(gameObject);
             }
 
@@ -74,8 +76,6 @@ public class ChildTextEvent : MonoBehaviour
                 noLoop = true;
             }
         }
-*/
-
+        */
     }
-
 }
