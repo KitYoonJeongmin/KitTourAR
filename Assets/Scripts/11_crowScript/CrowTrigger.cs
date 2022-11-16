@@ -14,7 +14,7 @@ public class CrowTrigger : MonoBehaviour
 
     private void Awake()
     {
-        if (IsCatch.crowMap == 1 && IsCatch.crowMap == 2)
+        if (IsCatch.crowMap == 1 || IsCatch.crowMap == 2)
             gameObject.SetActive(false);
 
         fTickTime = 0;
