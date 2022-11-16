@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BtnManager
+  - smallEventPre
   layers:
   - Default
   - TransparentFX

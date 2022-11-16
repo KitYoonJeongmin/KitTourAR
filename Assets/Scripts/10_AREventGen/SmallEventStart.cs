@@ -33,7 +33,7 @@ public class SmallEventStart : MonoBehaviour
             if (Physics.Raycast(ray, out hitobj)) //맞은 오브젝트가 있으면 hitobj에 저장하고 if들어감
             {
                 //터치한 곳에 오브젝트 이름이 smallEvent를 포함하면
-                if (hitobj.collider.name.Contains("smallEvent"))
+                if (hitobj.collider.CompareTag("smallEventPre"))
                 {
                     //현재 위치의 document id 들고옴
                     GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<AREventGen>().place;
