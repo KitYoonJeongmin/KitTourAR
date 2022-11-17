@@ -664,19 +664,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 325.2
+      value: 96.9
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.958
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 84.3
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1376,6 +1376,10 @@ PrefabInstance:
     - target: {fileID: 4550065620316020013, guid: 0ce684c63b353154b95bab05afb253b8, type: 3}
       propertyPath: m_Name
       value: User
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550065620316020013, guid: 0ce684c63b353154b95bab05afb253b8, type: 3}
+      propertyPath: m_TagString
+      value: mapCharacter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ce684c63b353154b95bab05afb253b8, type: 3}
