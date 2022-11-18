@@ -32,13 +32,10 @@ public class AREventGen : MonoBehaviour
     }
     [Header("위치 정보")]
     public LatLong[] latLongs; //위경도 저장 배열
-    private void Awake()
-    {
-        
-    }
+
     void Start()
     {
-        distance = 20;
+        distance = 7;
         latLongs = new LatLong[22];
         GetLatLonFromFB();
         GPSManager = GameObject.Find("GPS Manager");
