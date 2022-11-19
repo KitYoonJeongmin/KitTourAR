@@ -40,11 +40,15 @@ public class SmallEventStart : MonoBehaviour
                     //UI띄움
                     if (!smallEventManager.isView) // UI가 비활성 상태면 띄우기
                         smallEventManager.View(GameObject.Find("smallEvent"));
-                    else // 활성상태면 index증가해서 다음 text띄우기
-                        smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
+                    //else // 활성상태면 index증가해서 다음 text띄우기
+                    //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
                 
             }
         }
+    }
+    public void NextTextView()
+    {
+        smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
     }
 }

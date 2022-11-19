@@ -18,11 +18,13 @@ public class DialogueSystem : MonoBehaviour
     {
         isSelect = false;
         ButtonLayout.SetActive(false);
-        Begin(info);
+        Begin(info,0);
     }
 
-    public void Begin(Dialogue info)
+    public void Begin(Dialogue info,int num)
     {
+        //num은 처음 시작되는 text와 잡기 선택 후 출력되는 text를 구분하기 위해 넣었습니다.
+        //0:처음, 1: 선택 후
         sentences.Clear();
 
         //foreach�� sentences�� ����
@@ -31,7 +33,11 @@ public class DialogueSystem : MonoBehaviour
             sentences.Enqueue(sentence);
 
         }
-        Invoke("Next", 2);
+        if (num == 0)
+            Invoke("Next", 2);
+        else
+            Next();
+
     }
 
     public void Next()  //���� ���� ȣ��

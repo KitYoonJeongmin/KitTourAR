@@ -20,11 +20,11 @@ public class YesNoSystem : MonoBehaviour
         //�ý��ۿ� �����ؼ� Begin�� ���� ��� �ִ� ������ �Ѱ���
         var system = FindObjectOfType<DialogueSystem>();
         ButtonLayout.SetActive(false);
-        system.Begin(info);
+        system.Begin(info,1);
         system.isSelect = true;
 
         //Debug.Log("HI"); Debug.Log("HI");
-        system.Begin(info);
+        system.Begin(info,1);
     }
     public void Begin(Dialogue info)
     {

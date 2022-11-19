@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -846,6 +846,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7810957312169023892, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
   m_PrefabInstance: {fileID: 7810957313051202828}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1270549659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6335044886344450814, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+  m_PrefabInstance: {fileID: 7810957313051202828}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270549656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45febcbbe780c294b82ba16936171560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1307756521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5523701771641357905, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
@@ -1661,6 +1672,10 @@ PrefabInstance:
       propertyPath: btnObj
       value: 
       objectReference: {fileID: 124434589535148722}
+    - target: {fileID: 4941342299102059298, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6335044886344450814, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
       propertyPath: arCamera
       value: 
@@ -1669,6 +1684,62 @@ PrefabInstance:
       propertyPath: smallEventManager
       value: 
       objectReference: {fileID: 66579854}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7810957313051202829}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextTextView
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ChildTextEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784563247148834465, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1270549659}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextTextView
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SmallEventStart, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923981337159720799, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7810957312169023888, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1721,5 +1792,20 @@ PrefabInstance:
       propertyPath: smallEventManager
       value: 
       objectReference: {fileID: 5172565071988011871}
+    - target: {fileID: 8836727264830544604, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+--- !u!114 &7810957313051202829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7810957313960505015, guid: bcd2d7572a1cdf34799bab0a08aa44e6, type: 3}
+  m_PrefabInstance: {fileID: 7810957313051202828}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913505206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc4a5c49fbdab3459d5cb6c7b7a1416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

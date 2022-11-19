@@ -33,7 +33,7 @@ public class SmallEventManager : MonoBehaviour
         PlaceInfo placeInfo = scanPlace.GetComponent<PlaceInfo>();
         Debug.Log(placeInfo.documentId);
         TextView(placeInfo.documentId);
-        if (!gameObject.name.Contains("Btn"))
+        if (!gameObject.name.Contains("Btn") && isBtnView == false)
         {
             Btn(placeInfo.documentId);
         }
@@ -50,12 +50,7 @@ public class SmallEventManager : MonoBehaviour
         if (textAryIndex == textLen)
         {
             
-            if (!gameObject.name.Contains("Btn"))
-            {
-                isBtnView = false;
-                btnUi.SetActive(isBtnView);
-            }
-            else if(gameObject.name.Contains("Btn"))
+            if(gameObject.name.Contains("Btn"))
             {
                 isBtnView = true;
                 btnUi.SetActive(isBtnView);
