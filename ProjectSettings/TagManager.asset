@@ -7,6 +7,13 @@ TagManager:
   - BtnManager
   - smallEventPre
   - mapCharacter
+  - baseSDK
+  - particle
+  - ExampleBlock
+  - dataCollector
+  - Drone
+  - ProjectileMain
+  - Projectile
   layers:
   - Default
   - TransparentFX
