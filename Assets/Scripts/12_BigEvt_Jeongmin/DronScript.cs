@@ -6,7 +6,7 @@ public class DronScript : MonoBehaviour
 {
     public GameObject projectile;
     private Transform arCamera;
-    float speed = 0.5f;
+    float speed = 1.0f;
     float time=0.0f;
     private void Start()
     {
@@ -24,6 +24,7 @@ public class DronScript : MonoBehaviour
                 time = 0.0f;
                 GameObject dronProjec = Instantiate(projectile, transform.position+transform.forward ,transform.rotation);
                 dronProjec.GetComponent<Rigidbody>().AddForce(transform.forward * 100.0f);
+                
             }
         }
     }

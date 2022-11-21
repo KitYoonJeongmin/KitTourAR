@@ -36,13 +36,25 @@ public class HealthManager : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 healthPoint -= 10; //체력감소
-                attackView.transform.gameObject.SetActive(true);
-                healthText.text = healthPoint.ToString() + "/100";
-                healthImg.fillAmount = healthPoint * 0.01f;
+                if(healthPoint<100)
+                {
+                    attackView.transform.gameObject.SetActive(true);
+                    healthText.text = healthPoint.ToString() + "/100";
+                    healthImg.fillAmount = healthPoint * 0.01f;
+                }
                 if (healthPoint <= 0)
                 {
                     SceneManager.LoadScene("BigEvtDroneEnd");
                 }
+            }
+            else if (transform.name.Contains("Eagle"))
+            {
+                Instantiate(effect, transform.position, transform.rotation);
+                Destroy(other.transform.gameObject);
+            }
+            else if(transform.name == "back")
+            {
+                Destroy(other.gameObject);
             }
         }
         else if(other.transform.tag == "ProjectileMain")
@@ -57,6 +69,14 @@ public class HealthManager : MonoBehaviour
                 {
                     Destroy(transform.gameObject);
                 }
+            }
+        }
+        else if(other.transform.tag == "Drone")
+        {
+            if(transform.name.Contains("Eagle"))
+            {
+                Instantiate(effect, transform.position, transform.rotation);
+                Destroy(other.transform.gameObject);
             }
         }
 
