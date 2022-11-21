@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Text healtText;
+    private Text healthText;
+    private Image healthImg;
     public Image attackView;
     public int healthPoint=100;
     public GameObject effect;
@@ -15,7 +16,8 @@ public class HealthManager : MonoBehaviour
     {
         if(transform.tag == "MainCamera")
         {
-            healtText = GameObject.Find("healthText").GetComponent<Text>();
+            healthText = GameObject.Find("healthText").GetComponent<Text>();
+            healthImg = GameObject.Find("HealthBar").GetComponent<Image>();
         }
         
     }
@@ -35,8 +37,9 @@ public class HealthManager : MonoBehaviour
                 Destroy(other.gameObject);
                 healthPoint -= 10; //체력감소
                 attackView.transform.gameObject.SetActive(true);
-                healtText.text = healthPoint.ToString() + "/100";
-                if(healthPoint <= 0)
+                healthText.text = healthPoint.ToString() + "/100";
+                healthImg.fillAmount = healthPoint * 0.01f;
+                if (healthPoint <= 0)
                 {
                     SceneManager.LoadScene("BigEvtDroneEnd");
                 }
