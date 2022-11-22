@@ -14,6 +14,7 @@ TagManager:
   - Drone
   - ProjectileMain
   - Projectile
+  - bigEvent
   layers:
   - Default
   - TransparentFX

@@ -20,10 +20,18 @@ public class AREventGen : MonoBehaviour
     ARRaycastManager arRayMan; //ARRaycastManager 컴포넌트 저장
     private GameObject GPSManager;
     private Vector3 currentLocation;
+
     public bool isInPlace;
     public bool isGen;
+
     public int distance; //이벤트 프리팹을 활성화/비활성화 하기위한 거리
-    [Serializable]
+
+    private bool isBigEvent = false;
+    private bool isBigEventPlace;
+    public GameObject bigEventPre;
+
+    public string bigEventPlace;
+
     public struct LatLong //위경도 저장 구조체
     {
         public string name;
@@ -31,13 +39,16 @@ public class AREventGen : MonoBehaviour
         public float lon;
     }
     [Header("위치 정보")]
-    public LatLong[] latLongs; //위경도 저장 배열
+    public LatLong[] latLongs; //smallEvent 위경도 저장 배열
+    public LatLong[] bigEvtLatLongs;
 
     void Start()
     {
         distance = 7;
         latLongs = new LatLong[22];
+        bigEvtLatLongs = new LatLong[4];
         GetLatLonFromFB();
+        GetBigEventLatLonFromFB();
         GPSManager = GameObject.Find("GPS Manager");
 
         //인디케이터 비활성화
@@ -64,11 +75,23 @@ public class AREventGen : MonoBehaviour
             place = latLong.name;
             return;
         }
+        foreach (LatLong latLong in bigEvtLatLongs)
+        {
+            if (Vector3.Magnitude(currentLocation - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon)) > distance)
+            {
+                isBigEventPlace = false;
+                continue;
+            }
+
+            isBigEventPlace = true;
+            bigEventPlace = latLong.name;
+            return;
+        }
 
     }
 
     /**이벤트 프리팹 생성*/
-    void DetectGround()
+    void DetectGround(int evtNum)   //0:small event, 1:big event
     {
         //스마트폰 스크린의 Center를 찾음
         Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
@@ -78,12 +101,23 @@ public class AREventGen : MonoBehaviour
         //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
         if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
         {
-            //표식 오브젝트 활성화
-            eventPre.SetActive(true);
-            isGen = true;
-            //표식 오브젝트의 위치와 회전값 업데이트
-            eventPre.transform.position = hitInfos[0].pose.position;
-            eventPre.transform.rotation = hitInfos[0].pose.rotation;
+            if(evtNum == 0)
+            {
+                //표식 오브젝트 활성화
+                eventPre.SetActive(true);
+                isGen = true;
+                //표식 오브젝트의 위치와 회전값 업데이트
+                eventPre.transform.position = hitInfos[0].pose.position;
+                eventPre.transform.rotation = hitInfos[0].pose.rotation;
+            }
+            else if(evtNum == 1)
+            {
+                bigEventPre.SetActive(true);
+                isBigEvent = true;
+                bigEventPre.transform.position = hitInfos[0].pose.position;
+                bigEventPre.transform.rotation = hitInfos[0].pose.rotation;
+            }
+            
         }
     }
 
@@ -100,8 +134,26 @@ public class AREventGen : MonoBehaviour
     {
 
         //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
-        text1.text = "위치: " + isInPlace.ToString();
-        text2.text = "생성 유무: " + isGen.ToString();
+        text1.text = "위치: " + isBigEventPlace.ToString();
+        text2.text = "생성 유무: " + isBigEvent.ToString();
+        //BigEventPlace = true -> isBigEvent = false-> BigEventPrefab 생성
+        if(isBigEventPlace)
+        {
+            if(isBigEvent == false)
+            {
+                DetectGround(1);
+                //빅이벤트 프리팹 생성
+            }
+        }
+        else 
+        { 
+            if(isBigEvent)
+            {
+                bigEventPre.SetActive(false);
+                isBigEvent = false;
+            }
+        }
+        //BigEventPlace = false -> isBigEvent = true -> BigEventPrefab 삭제
         if (!isInPlace) 
         {
             if (isGen)
@@ -112,7 +164,7 @@ public class AREventGen : MonoBehaviour
         }
         if (!isGen)
         {
-            DetectGround();
+            DetectGround(0);
         }
         
 
@@ -140,6 +192,29 @@ public class AREventGen : MonoBehaviour
             latLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
 
             i++;
+        }
+    }
+    async void GetBigEventLatLonFromFB()
+    {
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        CollectionReference playlistref = db.Collection("bigEvent");  //smallEvent 컬렉션을 기리킴.
+        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //data들을 가져오라고 서버에 요청
+
+        int i = 0;
+        foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
+        {
+            bigEvtLatLongs[i].name = document.Id.ToString();
+            Dictionary<string, object> documentDictionary = document.ToDictionary();    //각 문서를 dictionary로 받음.
+            if(documentDictionary.ContainsKey("coordinate"))
+            {
+                GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
+                bigEvtLatLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
+                bigEvtLatLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
+                i++;
+            }
+            
+
+            
         }
     }
 }
