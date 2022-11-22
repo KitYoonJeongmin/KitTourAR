@@ -22,7 +22,7 @@ public class DroneStartText : MonoBehaviour
         startTextList[0] = "우와!! 드론이다!! \n금오공대는 학생들이 드론도 날리는구나!!";
         startTextList[1] = "근데 운동장에서 드론을 날려도 되나?\n누가 조종하고 있는거지?";
         startTextList[2] = "으악! 주인도 없는 드론이 공격하잖아!";
-        startTextList[3] = "<드론> \n\n반갑다. 인간들아. \n인공지능의. 시대가. 도래했다.";
+        startTextList[3] = "<드론> \n\n반갑다. 인간들아. \n인공지능의. 시대가. 도래했다.\n[주변에 장애물과 사람이 없는지 확인후 진행해주세요]";
 
         clearTextList.Add("이 새떼들은 뭐야!");
         clearTextList.Add("<삼족오의 친구들>\n\n 학교 손님이 위협을 받고 있다는 소식을 듣고 우리가 출동했지!\n이제 안심하라구!");

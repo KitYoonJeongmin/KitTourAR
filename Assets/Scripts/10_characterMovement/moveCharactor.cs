@@ -31,8 +31,8 @@ public class moveCharactor : MonoBehaviour
     }
     void GetLatitude()
     {
-        //locationVec = GPS.unityCoor;
-        locationVec = GPSEncoder.GPSToUCS(lat, lon);
+        locationVec = GPS.unityCoor;
+        //locationVec = GPSEncoder.GPSToUCS(lat, lon);
     }
     void Move()
     {
