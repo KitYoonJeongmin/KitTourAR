@@ -7,6 +7,7 @@ TagManager:
   - BtnManager
   - smallEventPre
   - mapCharacter
+  - Enemy
   layers:
   - Default
   - TransparentFX
