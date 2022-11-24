@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System;
+using System.Linq;
 using UnityEngine;
 using Firebase.Firestore;
 using UnityEngine.UI;
@@ -6,6 +8,8 @@ using UnityEngine.UI;
 public class SmallEventManager : MonoBehaviour
 {
     public DBTextManager textManager;
+    public ReportDB reportDB;
+
     public GameObject btnUi;
     public GameObject textUi;        //화면에 출력될 canvas(UI)
     public Text eventText;           //text event(canvas 내부 text(Legacy) 연결)
@@ -31,8 +35,15 @@ public class SmallEventManager : MonoBehaviour
 
         scanPlace = place;
         PlaceInfo placeInfo = scanPlace.GetComponent<PlaceInfo>();
-        Debug.Log(placeInfo.documentId);
-        TextView(placeInfo.documentId);
+
+
+        if (placeInfo.documentId.FirstOrDefault() == 'r')
+            ReportEventView(placeInfo.documentId);
+        else
+        {
+            Debug.Log(placeInfo.documentId);
+            TextView(placeInfo.documentId);
+        }
         if (!gameObject.name.Contains("Btn") && isBtnView == false)
         {
             Btn(placeInfo.documentId);
@@ -96,5 +107,43 @@ public class SmallEventManager : MonoBehaviour
         else if (documentId.Contains("internationalEducation")) { btnIndex = 6; isBtnView = true; }
         else if (documentId.Contains("library")) { btnIndex = 7; isBtnView = true; }
         btnUi.SetActive(isBtnView);
+    }
+
+    public void ReportEventView(string documentId)
+    {
+        int textLen = reportDB.textNum(documentId);
+        string eventData = reportDB.GetText(documentId, textAryIndex);
+
+        if (textAryIndex == textLen)
+        {
+
+            if (gameObject.name.Contains("Btn"))
+            {
+                isBtnView = true;
+                btnUi.SetActive(isBtnView);
+            }
+            isView = false;
+            textAryIndex = 0;
+            textUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
+            return;
+        }
+        foreach (KeyValuePair<string, int> word in imgDetectWord) // text에 img를 출력할 단어가 있는지 검사
+        {
+            if (eventData.Contains(word.Key)) //text에 img를 출력할 단어가 있다면
+            {
+                ImageView(word.Key); // 해당 단어에 적합한 이미지 출력
+                break;
+                //isImage = true; //이미지 출력중
+            }
+            imageUi.SetActive(false); //이미지 항상 비활성화
+
+        }
+
+        eventText.text = eventData;
+        eventText.text = eventText.text.Replace("\\n", "\n"); // 줄바꿈 수정
+
+        isView = true;
+
+        textAryIndex++;
     }
 }
