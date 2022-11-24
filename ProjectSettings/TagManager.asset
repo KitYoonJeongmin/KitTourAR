@@ -7,6 +7,14 @@ TagManager:
   - BtnManager
   - smallEventPre
   - mapCharacter
+  - baseSDK
+  - particle
+  - ExampleBlock
+  - dataCollector
+  - Drone
+  - ProjectileMain
+  - Projectile
+  - bigEvent
   - reportEventPre
   - Enemy
   layers:
@@ -16,7 +24,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Unit
   - 
   - 
   - 

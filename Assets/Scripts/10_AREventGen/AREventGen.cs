@@ -12,19 +12,19 @@ using System.Threading;
 
 public class AREventGen : MonoBehaviour
 {
-    //¿ÀºêÁ§Æ®-À¯Àú »çÀÌÀÇ °Å¸®¿Í ¿ÀºêÁ§Æ® »ý¼º ¿©ºÎ¸¦ ¾Ë·ÁÁÖ´Â text
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®-ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½Ë·ï¿½ï¿½Ö´ï¿½ text
     public Text text1;
     public Text text2;
     public string place;
-    public GameObject eventPre; //ÀÌº¥Æ® ÇÁ¸®ÆÕ ÀúÀå
-    ARRaycastManager arRayMan; //ARRaycastManager ÄÄÆ÷³ÍÆ® ÀúÀå
+    public GameObject eventPre; //ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    ARRaycastManager arRayMan; //ARRaycastManager ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
     private GameObject GPSManager;
     private Vector3 currentLocation;
 
     public bool isInPlace;
     public bool isGen;
 
-    public int distance; //ÀÌº¥Æ® ÇÁ¸®ÆÕÀ» È°¼ºÈ­/ºñÈ°¼ºÈ­ ÇÏ±âÀ§ÇÑ °Å¸®
+    public int distance; //ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­/ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
 
     private bool isBigEvent = false;
     private bool isBigEventPlace;
@@ -32,14 +32,14 @@ public class AREventGen : MonoBehaviour
 
     public string bigEventPlace;
 
-    public struct LatLong //À§°æµµ ÀúÀå ±¸Á¶Ã¼
+    public struct LatLong //ï¿½ï¿½ï¿½æµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼
     {
         public string name;
         public float lat;
         public float lon;
     }
-    [Header("À§Ä¡ Á¤º¸")]
-    public LatLong[] latLongs; //smallEvent À§°æµµ ÀúÀå ¹è¿­
+    [Header("ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½")]
+    public LatLong[] latLongs; //smallEvent ï¿½ï¿½ï¿½æµµ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
     public LatLong[] bigEvtLatLongs;
 
     void Start()
@@ -51,16 +51,16 @@ public class AREventGen : MonoBehaviour
         GetBigEventLatLonFromFB();
         GPSManager = GameObject.Find("GPS Manager");
 
-        //ÀÎµðÄÉÀÌÅÍ ºñÈ°¼ºÈ­
+        //ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         eventPre.SetActive(false);
         isInPlace = false;
-        //ÄÄÆ÷³ÍÆ®¿¡¼­ ARRaycastManaget È¹µæ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ARRaycastManaget È¹ï¿½ï¿½
         arRayMan = GetComponent<ARRaycastManager>();
         InvokeRepeating("GetUNTCoord", 0.5f, 0.2f);
         InvokeRepeating("DetectPlace", 0.1f, 0.2f);
     }
 
-    /** ±ÙÃ³¿¡ ÀÌº¥Æ®¸¦ »ý¼ºÇÒ °÷ÀÌ ÀÖ´ÂÁö È®ÀÎ*/
+    /** ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½*/
     void DetectPlace()
     {
         foreach (LatLong latLong in latLongs)
@@ -90,38 +90,38 @@ public class AREventGen : MonoBehaviour
 
     }
 
-    /**ÀÌº¥Æ® ÇÁ¸®ÆÕ »ý¼º*/
+    /**ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
     void DetectGround(int evtNum)   //0:small event, 1:big event
     {
-        //½º¸¶Æ®Æù ½ºÅ©¸°ÀÇ Center¸¦ Ã£À½
+        //ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ Centerï¿½ï¿½ Ã£ï¿½ï¿½
         Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
-        //Ray¿¡ ºÎµúÈù ´ë»óµéÀÇ Á¤º¸¸¦ ÀúÀåÇÒ ¸®½ºÆ® »ý¼º
+        //Rayï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
         List<ARRaycastHit> hitInfos = new List<ARRaycastHit>();
 
-        //½ºÅ©¸° Áß¾ÓÁöÁ¡À¸·Î ºÎÅÍ Ray¸¦ ¹ß»ç ÇßÀ» ¶§, Plane Å¸ÀÔÀÇ ¹°Ã¼°¡ Á¸ÀçÇÑ´Ù¸é,
+        //ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ß¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Rayï¿½ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, Plane Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½,
         if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
         {
-            if (evtNum == 0)
+            if(evtNum == 0)
             {
-                //Ç¥½Ä ¿ÀºêÁ§Æ® È°¼ºÈ­
+                //Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® È°ï¿½ï¿½È­
                 eventPre.SetActive(true);
                 isGen = true;
-                //Ç¥½Ä ¿ÀºêÁ§Æ®ÀÇ À§Ä¡¿Í È¸Àü°ª ¾÷µ¥ÀÌÆ®
+                //Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
                 eventPre.transform.position = hitInfos[0].pose.position;
                 eventPre.transform.rotation = hitInfos[0].pose.rotation;
             }
-            else if (evtNum == 1)
+            else if(evtNum == 1)
             {
                 bigEventPre.SetActive(true);
                 isBigEvent = true;
                 bigEventPre.transform.position = hitInfos[0].pose.position;
                 bigEventPre.transform.rotation = hitInfos[0].pose.rotation;
             }
-
+            
         }
     }
 
-    /**À¯Àú°¡ ÀÌº¥Æ® ÇÁ¸®ÆÕ°ú ¸Ö¾îÁú ¶§ ÇÁ¸®ÆÕ ºñÈ°¼ºÈ­*/
+    /**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½Õ°ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­*/
     void DestroyEventPre()
     {
         Debug.Log("Destroy");
@@ -129,20 +129,37 @@ public class AREventGen : MonoBehaviour
         isGen = false;
     }
 
-    /**ÀÌº¥Æ® ÇÁ¸®ÆÕÀÇ È°¼ºÈ­, ºñÈ°¼ºÈ­¸¦ °¨Áö*/
+    /**ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­, ï¿½ï¿½È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½*/
     void Update()
     {
 
         //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
-        text1.text = "À§Ä¡: " + isBigEventPlace.ToString();
-        text2.text = "»ý¼º À¯¹«: " + isBigEvent.ToString();
-        //BigEventPlace = true -> isBigEvent = false-> BigEventPrefab »ý¼º
-        if (isBigEventPlace)
+        text1.text = "ï¿½ï¿½Ä¡: " + isBigEventPlace.ToString();
+        text2.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: " + isBigEvent.ToString();
+        //BigEventPlace = true -> isBigEvent = false-> BigEventPrefab ï¿½ï¿½ï¿½ï¿½
+        if(isBigEventPlace)
+        {
+            if(isBigEvent == false)
+            {
+                DetectGround(1);
+                //ï¿½ï¿½ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            }
+        }
+        else 
+        { 
+            if(isBigEvent)
+            {
+                bigEventPre.SetActive(false);
+                isBigEvent = false;
+            }
+        }
+        //BigEventPlace = false -> isBigEvent = true -> BigEventPrefab ï¿½ï¿½ï¿½ï¿½
+        if (!isInPlace) 
         {
             if (isBigEvent == false)
             {
                 DetectGround(1);
-                //ºòÀÌº¥Æ® ÇÁ¸®ÆÕ »ý¼º
+                //ï¿½ï¿½ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
         }
         else
@@ -153,7 +170,7 @@ public class AREventGen : MonoBehaviour
                 isBigEvent = false;
             }
         }
-        //BigEventPlace = false -> isBigEvent = true -> BigEventPrefab »èÁ¦
+        //BigEventPlace = false -> isBigEvent = true -> BigEventPrefab ï¿½ï¿½ï¿½ï¿½
         if (!isInPlace)
         {
             if (isGen)
@@ -169,24 +186,24 @@ public class AREventGen : MonoBehaviour
 
 
     }
-    /**ÇöÀçÀ§Ä¡¸¦ unity coord·Î º¯È¯ÇÑ °ÍÀ» 0.2ÃÊ¸¶´Ù °¡Á®¿È*/
+    /**ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ unity coordï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 0.2ï¿½Ê¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     void GetUNTCoord()
     {
         currentLocation = GPS.unityCoor;
     }
 
-    /**firebase¿¡¼­ latlong¸¦ °¡Á®¿È*/
+    /**firebaseï¿½ï¿½ï¿½ï¿½ latlongï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     async void GetLatLonFromFB()
     {
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
-        CollectionReference playlistref = db.Collection("smallEvent");  //smallEvent ÄÃ·º¼ÇÀ» ±â¸®Å´.
-        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //dataµéÀ» °¡Á®¿À¶ó°í ¼­¹ö¿¡ ¿äÃ»
+        CollectionReference playlistref = db.Collection("smallEvent");  //smallEvent ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â¸®Å´.
+        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //dataï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 
         int i = 0;
-        foreach (DocumentSnapshot document in snapshot.Documents)   //°¢ ¹®¼­µé¿¡ Á¢±Ù
+        foreach (DocumentSnapshot document in snapshot.Documents)   //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¿¡ ï¿½ï¿½ï¿½ï¿½
         {
             latLongs[i].name = document.Id.ToString();
-            Dictionary<string, object> documentDictionary = document.ToDictionary();    //°¢ ¹®¼­¸¦ dictionary·Î ¹ÞÀ½.
+            Dictionary<string, object> documentDictionary = document.ToDictionary();    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dictionaryï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
             GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
             latLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
             latLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
@@ -197,24 +214,24 @@ public class AREventGen : MonoBehaviour
     async void GetBigEventLatLonFromFB()
     {
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
-        CollectionReference playlistref = db.Collection("bigEvent");  //smallEvent ÄÃ·º¼ÇÀ» ±â¸®Å´.
-        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //dataµéÀ» °¡Á®¿À¶ó°í ¼­¹ö¿¡ ¿äÃ»
+        CollectionReference playlistref = db.Collection("bigEvent");  //smallEvent ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â¸®Å´.
+        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //dataï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 
         int i = 0;
-        foreach (DocumentSnapshot document in snapshot.Documents)   //°¢ ¹®¼­µé¿¡ Á¢±Ù
+        foreach (DocumentSnapshot document in snapshot.Documents)   //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¿¡ ï¿½ï¿½ï¿½ï¿½
         {
             bigEvtLatLongs[i].name = document.Id.ToString();
-            Dictionary<string, object> documentDictionary = document.ToDictionary();    //°¢ ¹®¼­¸¦ dictionary·Î ¹ÞÀ½.
-            if (documentDictionary.ContainsKey("coordinate"))
+            Dictionary<string, object> documentDictionary = document.ToDictionary();    //ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dictionaryï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+            if(documentDictionary.ContainsKey("coordinate"))
             {
                 GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
                 bigEvtLatLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
                 bigEvtLatLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
                 i++;
             }
+            
 
-
-
+            
         }
     }
 }
