@@ -7,6 +7,7 @@ using UnityEngine.XR.ARSubsystems;
 public class SmallEventStart : MonoBehaviour
 {
     public SmallEventManager smallEventManager;
+    public ReportARGen reportARGen;
     private ARRaycastManager raycastMgr;
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>(); //Ray가 맞은 오브젝트 정보 저장
@@ -30,8 +31,10 @@ public class SmallEventStart : MonoBehaviour
             Ray ray;
             RaycastHit hitobj;
             ray = arCamera.ScreenPointToRay(touch.position); //카메라 정중앙에서 ray쏨
+
             if (Physics.Raycast(ray, out hitobj)) //맞은 오브젝트가 있으면 hitobj에 저장하고 if들어감
             {
+
                 //터치한 곳에 오브젝트 이름이 smallEvent를 포함하면
                 if (hitobj.collider.CompareTag("smallEventPre"))
                 {
@@ -43,7 +46,15 @@ public class SmallEventStart : MonoBehaviour
                     //else // 활성상태면 index증가해서 다음 text띄우기
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
-                
+
+                else if (hitobj.collider.CompareTag("reportEventPre"))
+                {
+                    GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
+                    TimerManager.countReport++;
+                    if (!smallEventManager.isView) // UI가 비활성 상태면 띄우기
+                        smallEventManager.View(GameObject.Find("ReportEvt"));
+                    reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
+                }
             }
         }
     }
