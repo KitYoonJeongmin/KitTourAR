@@ -109,6 +109,7 @@ public class AREventGen : MonoBehaviour
                 //ǥ�� ������Ʈ�� ��ġ�� ȸ���� ������Ʈ
                 eventPre.transform.position = hitInfos[0].pose.position;
                 eventPre.transform.rotation = hitInfos[0].pose.rotation;
+                eventPre.transform.Rotate(new Vector3(0, -90, 0));
             }
             else if(evtNum == 1)
             {
@@ -134,8 +135,8 @@ public class AREventGen : MonoBehaviour
     {
 
         //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
-        text1.text = "��ġ: " + isBigEventPlace.ToString();
-        text2.text = "���� ����: " + isBigEvent.ToString();
+        text1.text = "위치: " + isInPlace.ToString();
+        text2.text = "생성여부: " + isGen.ToString();
         //BigEventPlace = true -> isBigEvent = false-> BigEventPrefab ����
         if(isBigEventPlace)
         {

@@ -28,6 +28,7 @@ public class SmallEventManager : MonoBehaviour
     {
         imgDetectWord.Add("휴먼",0);
         imgDetectWord.Add("너굴맨",1);
+        imgDetectWord.Add("영운선배", 2);
     }
     public void View(GameObject place)
     {
@@ -66,9 +67,14 @@ public class SmallEventManager : MonoBehaviour
                 isBtnView = true;
                 btnUi.SetActive(isBtnView);
             }
+            else if (textUi.transform.parent.CompareTag("smallEventPre"))
+            {
+                textUi.transform.parent.GetComponent<SmallEventStart>().MatChange(0);
+            }
             isView = false;
             textAryIndex = 0;
             textUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
+
             return;
         }
         foreach (KeyValuePair<string, int> word in imgDetectWord) // text에 img를 출력할 단어가 있는지 검사
