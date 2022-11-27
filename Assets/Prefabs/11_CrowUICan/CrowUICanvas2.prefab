@@ -1263,6 +1263,7 @@ MonoBehaviour:
       \uAC83 \uAC19\uB2E4."
     - "\uBB54\uAC00 \uC7A1\uC744 \uC218 \uC788\uC744 \uAC83 \uAC19\uC740\uB370..."
     - "\uC5B4\uB5BB\uAC8C \uD560\uAE4C?"
+  isSelect: 0
 --- !u!1 &4030428064636612459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1354,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4030428064636612458
 MonoBehaviour:
   m_ObjectHideFlags: 0
