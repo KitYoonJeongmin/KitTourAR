@@ -13,4 +13,9 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("KitMapScene");
     }
+
+    public void SceneChange3()
+    {
+        SceneManager.LoadScene("Loading");
+    }
 }

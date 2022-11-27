@@ -31,7 +31,7 @@ public class TimingManager : MonoBehaviour
             timingBoxs[i].Set(Center.localPosition.y - timingRect[i].rect.height / 2, Center.localPosition.y + timingRect[i].rect.height / 2);
         }
     }
-
+    //-174
     public void CheckTiming()
     {
         for(int i=0;i<boxNoteList.Count;i++)
@@ -41,7 +41,7 @@ public class TimingManager : MonoBehaviour
 
             for (int y=0;y<timingBoxs.Length;y++)
             {
-                if(timingBoxs[y].x<=t_notePosY&&t_notePosY<=timingBoxs[y].y)
+                if(timingBoxs[y].x<=t_notePosY&&t_notePosY<= timingBoxs[y].y)
                 {
                     if (t_notePosX <= -208) {
                         //노트 제거

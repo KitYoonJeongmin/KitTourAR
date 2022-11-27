@@ -28,7 +28,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.1.0' // Assets/Firebase/Editor/DatabaseDependencies.xml:13
     implementation 'com.google.firebase:firebase-database-unity:10.0.1' // Assets/Firebase/Editor/DatabaseDependencies.xml:22
     implementation 'com.google.firebase:firebase-firestore:24.4.0' // Assets/Firebase/Editor/FirestoreDependencies.xml:13
-    implementation 'com.google.firebase:firebase-firestore-unity:10.1.0' // Assets/Firebase/Editor/FirestoreDependencies.xml:20
+    implementation 'com.google.firebase:firebase-firestore-unity:10.0.1' // Assets/Firebase/Editor/FirestoreDependencies.xml:20
 // Android Resolver Dependencies End
 **DEPS**}
 
