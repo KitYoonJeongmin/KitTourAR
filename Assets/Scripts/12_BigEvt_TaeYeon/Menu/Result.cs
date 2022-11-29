@@ -23,7 +23,7 @@ public class Result : MonoBehaviour
     {
         goUI.SetActive(true);
 
-        for(int i = 0; i < txtCount.Length; i++)
+        for (int i = 0; i < txtCount.Length; i++)
         {
             txtCount[i].text = "0";
         }
@@ -33,9 +33,9 @@ public class Result : MonoBehaviour
         int[] t_judgement = theTiming.GetJudgementRecord();
         int t_currentScore = theScore.GetCurrentScore();
 
-        for (int i=0;i<txtCount.Length;i++)
+        for (int i = 0; i < txtCount.Length; i++)
         {
-            txtCount[i].text = string.Format("(0:#,##0}",t_judgement[i]);
+            txtCount[i].text = string.Format("(0:#,##0}", t_judgement[i]);
         }
 
         txtScore.text = string.Format("(0:#,##0}", t_currentScore);
