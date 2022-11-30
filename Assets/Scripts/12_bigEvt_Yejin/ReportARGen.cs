@@ -30,14 +30,14 @@ public class ReportARGen : MonoBehaviour
         public float lon;
         public bool isDestroy;
     }
+
     [Header("위치 정보")]
     public LatLong[] latLongs; //위경도 저장 배열
-    public LatLong[] rLatLongs; //리포트
 
     // Start is called before the first frame update
     void Start()
     {
-        latLongs = new LatLong[11];
+        latLongs = new LatLong[12];
         GetLatLonFromFB();
 
         GPSManager = GameObject.Find("GPS Manager");
@@ -145,6 +145,7 @@ public class ReportARGen : MonoBehaviour
         QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //data들을 가져오라고 서버에 요청
 
         int i = 0;
+
         foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
         {
             latLongs[i].name = document.Id.ToString();
@@ -157,4 +158,6 @@ public class ReportARGen : MonoBehaviour
             i++;
         }
     }
+    
 }
+
