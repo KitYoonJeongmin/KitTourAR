@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    int score = 0;
+    public Image RunAway;
+    //게임오버확인
     bool gameover = false;
     //플레이어 컨트롤
     public PlayerControl playerControl;
@@ -16,7 +18,7 @@ public class GameManager : MonoBehaviour
     //점수표시
     public Text scoreText;
     float Score;
-
+    GameObject[] enemy;
     private GameManager() { }
     private static GameManager instance = null;
 
@@ -51,6 +53,19 @@ public class GameManager : MonoBehaviour
         if (!gameover)
         {
             scoreUpdate();
+            if (Score > 50)
+            {
+                Debug.Log("끝냉");
+                gameover = true;
+                playerControl.die();
+                enemySpawner.gameover();
+                RunAway.gameObject.SetActive(true);
+                enemy = GameObject.FindGameObjectsWithTag("Enemy");
+                for (int i = 0; i < enemy.Length; i++)
+                {
+                    Destroy(enemy[i]);
+                }
+            }
         }
     }
     public void gameOver()
@@ -59,6 +74,7 @@ public class GameManager : MonoBehaviour
         enemySpawner.gameover();
         gameoverText.gameObject.SetActive(true);
         gameover = true;
+        SceneManager.LoadScene("Success");
     }
     // Update is called once per frame
     
@@ -67,6 +83,13 @@ public class GameManager : MonoBehaviour
         Score += Time.deltaTime;
 
         scoreText.text = "Score: " + (int)Score;
+
+        //Debug.Log("점수 업! "+((int)Score).ToString());
     }
 
+    public void changeScene()
+    {
+        SceneManager.LoadScene("KitMapScene");
+        return;
+    }
 }

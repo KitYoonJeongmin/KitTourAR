@@ -7,7 +7,7 @@ public class enemy : MonoBehaviour
     public Transform playerTransform;
     Transform enemyTransform;
     Rigidbody2D enemyRigidbody;
-    public int speed;
+    public float speed;
     public void init(Transform playerTransform)
     {
         this.playerTransform = playerTransform;
@@ -38,6 +38,12 @@ public class enemy : MonoBehaviour
     }
     void Move()
     {
+        speed += Time.deltaTime * 0.1f;
         enemyRigidbody.velocity = vec * speed;
+        //Debug.Log(speed.ToString());
+    }
+    public void gameover()
+    {
+        Destroy(gameObject);
     }
 }

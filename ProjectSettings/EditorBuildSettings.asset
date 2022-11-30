@@ -32,6 +32,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/12_bigEvt_Yejin/GenUI 1.unity
     guid: b97fbde91478d8d45bc0df34e0ce3825
+  - enabled: 1
+    path: Assets/Scenes/12_BigEventJeongik/startScene.unity
+    guid: c1eb9ecdc955d7c4a98ae115a4c46277
+  - enabled: 1
+    path: Assets/Scenes/12_BigEventJeongik/avoidGame.unity
+    guid: e1ab8cad992598c49bef00dc33bed3fd
+  - enabled: 1
+    path: Assets/Scenes/12_bigEvt_Taeyeon/FlogTalk.unity
+    guid: 48c025221f78b924ab5803aadee4ec6a
+  - enabled: 1
+    path: Assets/Scenes/12_bigEvt_Taeyeon/Rhythm.unity
+    guid: f383b10420aedf0419c24f6c0af73af2
+  - enabled: 1
+    path: Assets/Scenes/12_BigEventJeongik/Fail.unity
+    guid: 8cb0a028c5f35ae45a54be0df5a750bd
+  - enabled: 1
+    path: Assets/Scenes/12_BigEventJeongik/Success.unity
+    guid: a8d35728f0d1860439be00edf302e224
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 68364e0eed003544ca43a562e3dc0b28, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: aacaf59405dce9b41aa38bd80538e341, type: 2}
