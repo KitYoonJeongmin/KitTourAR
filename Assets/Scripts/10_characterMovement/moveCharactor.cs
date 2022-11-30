@@ -7,8 +7,8 @@ public class moveCharactor : MonoBehaviour
     private Vector3 locationVec;
     private float moveSpeed = 4.0f;
     private float turnSpeed = 4.0f;
-    public float lat = 36.142952f;
-    public float lon = 128.394272f;
+    public float lat = 36.143014f;
+    public float lon = 128.394492f;
     //private float mov_speed = 10.0f;
     // Start is called before the first frame update
     private void Awake()

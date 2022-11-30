@@ -23,6 +23,7 @@ public class GPS : MonoBehaviour
     public float longitude = 0;
 
     static public Vector3 unityCoor;
+    public Vector3 un;
     float waitTime = 0;
 
     public bool receiveGPS = false;
@@ -112,7 +113,11 @@ public class GPS : MonoBehaviour
             //ui에 출력
             latitude_text.text = "위도 : " + latitude.ToString();
             longitude_text.text = "경도 : " + longitude.ToString();
+            //latitude = 36.14301f;
+            //longitude = 128.3945f;
             unityCoor = GPSEncoder.GPSToUCS(latitude, longitude);
+            
+            //Debug.Log("hihi " + unityCoor.x.ToString() + " "+ unityCoor.z.ToString());
             yield return new WaitForSeconds(resendTime);
         }
     }

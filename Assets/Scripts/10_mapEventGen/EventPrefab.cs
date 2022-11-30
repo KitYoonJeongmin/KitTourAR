@@ -24,7 +24,7 @@ public class EventPrefab : MonoBehaviour
             statistics = (Dictionary<string, object>)documentDictionary["unityCoord"];
                 
             coor.x = float.Parse((statistics["x"]).ToString());
-            coor.y = float.Parse((statistics["y"]).ToString());
+            coor.y = float.Parse((statistics["y"]).ToString()) + 2.0f;
             coor.z = float.Parse((statistics["z"]).ToString());
             //string,Parse(statistics[item].ToString()
 
