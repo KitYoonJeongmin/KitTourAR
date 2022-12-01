@@ -49,7 +49,7 @@ public class SmallEventManager : MonoBehaviour
         {
             Btn(placeInfo.documentId);
         }
-
+        
         textUi.SetActive(isView);
         
     }
@@ -109,7 +109,7 @@ public class SmallEventManager : MonoBehaviour
         else if (documentId.Contains("stuentHall_ground")) { btnIndex = 1; isBtnView = true; }
         else if (documentId.Contains("busStop")) { btnIndex = 3; isBtnView = true; }
         else if (documentId.Contains("digitalBuilding")) { btnIndex = 4; isBtnView = true; }
-        else if (documentId.Contains("domitory")) { btnIndex = 5; isBtnView = true; }
+        else if (documentId.Contains("dormitory")) { btnIndex = 5; isBtnView = true; }
         else if (documentId.Contains("internationalEducation")) { btnIndex = 6; isBtnView = true; }
         else if (documentId.Contains("library")) { btnIndex = 7; isBtnView = true; }
         btnUi.SetActive(isBtnView);

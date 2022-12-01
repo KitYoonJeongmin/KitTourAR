@@ -15,6 +15,8 @@ public class AREventGen : MonoBehaviour
     //������Ʈ-���� ������ �Ÿ��� ������Ʈ ���� ���θ� �˷��ִ� text
     public Text text1;
     public Text text2;
+    public Text text3;
+    public Text text4;
     public string place;
     public GameObject eventPre; //�̺�Ʈ ������ ����
     ARRaycastManager arRayMan; //ARRaycastManager ������Ʈ ����
@@ -137,8 +139,12 @@ public class AREventGen : MonoBehaviour
         //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
         text1.text = "위치: " + isInPlace.ToString();
         text2.text = "생성여부: " + isGen.ToString();
+        if(text3 != null)
+            text3.text = "big위치: " + isBigEventPlace.ToString();
+        if(text4 != null)
+            text4.text = "big생성여부: " + isBigEvent.ToString();
         //BigEventPlace = true -> isBigEvent = false-> BigEventPrefab ����
-        if(isBigEventPlace)
+        if (isBigEventPlace)
         {
             if(isBigEvent == false)
             {
