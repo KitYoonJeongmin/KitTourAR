@@ -6,6 +6,8 @@ using UnityEngine.XR.ARSubsystems;
 
 public class SmallEventStart : MonoBehaviour
 {
+    public Material[] mat = new Material[2];
+
     public SmallEventManager smallEventManager;
     public ReportARGen reportARGen;
     private ARRaycastManager raycastMgr;
@@ -42,7 +44,11 @@ public class SmallEventStart : MonoBehaviour
                     GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<AREventGen>().place;
                     //UI띄움
                     if (!smallEventManager.isView) // UI가 비활성 상태면 띄우기
+                    {
                         smallEventManager.View(GameObject.Find("smallEvent"));
+                        MatChange(1);
+                    }
+                        
                     //else // 활성상태면 index증가해서 다음 text띄우기
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
@@ -62,4 +68,9 @@ public class SmallEventStart : MonoBehaviour
     {
         smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
     }
+    public void MatChange(int matNum) //material 변경
+    {
+        gameObject.GetComponent<MeshRenderer>().material = mat[matNum];
+    }
+
 }

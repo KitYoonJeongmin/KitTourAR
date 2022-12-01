@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-auth-unity.meta
 guid: af4dd5d92d17a8648bf772d4b5d4ba09
+========
+guid: 0c0773030da15454a8bf4d067729cc13
+>>>>>>>> feature/12_bigEvt_Yejin:Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-firestore-unity/10.0.1.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
