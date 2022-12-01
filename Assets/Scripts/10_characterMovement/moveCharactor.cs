@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class moveCharactor : MonoBehaviour
 {
+    
+
     private Vector3 locationVec;
     private float moveSpeed = 4.0f;
     private float turnSpeed = 4.0f;
