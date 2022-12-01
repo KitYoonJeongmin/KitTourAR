@@ -73,7 +73,10 @@ public class CrowEvent : MonoBehaviour
     {
         int prob = Random.Range(1, 10);
         if (prob > 5)
+        {
             isCatched = true;
+        }
+            
         evtNum = 0;
     }
 
