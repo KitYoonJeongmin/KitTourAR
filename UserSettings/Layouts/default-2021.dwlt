@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -40,9 +40,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 378.4
+    y: 407.2
     width: 480
-    height: 344.4
+    height: 315.59998
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 14}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 90
+  controlID: 89
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 89
+  controlID: 16
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,9 +190,9 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 480
-    height: 378.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    height: 407.2
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: InspectorWindow
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -217,14 +217,14 @@ MonoBehaviour:
     y: 0
     width: 372
     height: 722.8
-  m_MinSize: {x: 276, y: 71}
+  m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 13}
   - {fileID: 11}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -303,7 +303,7 @@ MonoBehaviour:
     x: 684
     y: 73.6
     width: 478
-    height: 357.4
+    height: 386.2
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -313,7 +313,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3011fbff540cfcff708efcff6a9dfcff14c8fcff62c8fcff58cbfcff5cccfcffdadbfcffcedcfcff1cddfcff82e3fcff9ce4fcfff6e9fcff5e97fdffa097fdffb697fdffcc97fdffc8a9fdffb4aafdff2aa6fffff4fafffff4ffffff667000007c700000807000007c950000d4aa000066b20000
+      m_ExpandedIDs: 1ec4ffffaac7ffff3ec8ffff4ec8ffff50c8ffff36d2ffff8afafffff4fafffff4ffffff86700000b070000064a60000bea60000c0a60000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 684
-    y: 452
+    y: 480.80002
     width: 478
-    height: 323.4
+    height: 294.59998
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -419,22 +419,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/13_UI_Yejin
+    - Assets/Scenes/12_bigEvt_Yejin
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes/13_UI_Yejin
+  - Assets/Scenes/12_bigEvt_Yejin
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\lucet\Documents\opensource
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 840}
-    m_SelectedIDs: 84750000
-    m_LastClickedID: 30084
-    m_ExpandedIDs: 000000005c7400005e74000060740000627400006474000066740000687400006c7400006e74000070740000727400007474000076740000787400007a7400007c7400007e74000080740000
+    scrollPos: {x: 0, y: 709.4}
+    m_SelectedIDs: 86780000
+    m_LastClickedID: 30854
+    m_ExpandedIDs: 000000006a7700006c7700006e77000070770000727700007477000076770000787700007a7700007c7700007e77000080770000827700008477000086770000887700008a7700008c770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -450,7 +450,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 2}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c7400005e74000060740000627400006474000066740000687400006a7400006c7400006e74000070740000727400007474000076740000787400007a7400007c7400007e74000080740000
+    m_ExpandedIDs: 000000006a7700006c7700006e77000070770000727700007477000076770000787700007a7700007c7700007e77000080770000827700008477000086770000887700008a7700008c770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -517,7 +517,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 351.40002
+  m_DirectoriesAreaWidth: 244.40002
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -643,8 +643,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.599976}
+      snapOffset: {x: -100, y: -25.599976}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -665,7 +665,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -709,7 +709,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25.599998}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -739,12 +739,12 @@ MonoBehaviour:
       layout: 4
     - dockPosition: 1
       containerId: overlay-container--right
-      floating: 1
+      floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: -231.39996, y: 79.59999}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 0
       id: Scene View/Camera
       index: 1
       layout: 4
@@ -868,9 +868,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 27.81953, y: 188.35107, z: -7.1627655}
+    m_Target: {x: 214.2304, y: 2, z: -176.0867}
     speed: 2
-    m_Value: {x: 27.81953, y: 188.35107, z: -7.1627655}
+    m_Value: {x: 214.2304, y: 2, z: -176.0867}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -917,13 +917,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.47474656, y: 0.26628134, z: -0.15327768, w: -0.8247569}
+    m_Target: {x: 0.2136537, y: -0.027544815, z: 0.0060267127, w: 0.9765039}
     speed: 2
-    m_Value: {x: -0.47474462, y: 0.26628026, z: -0.15327705, w: -0.8247536}
+    m_Value: {x: 0.21365339, y: -0.027544776, z: 0.006026704, w: 0.97650254}
   m_Size:
-    m_Target: 963.4174
+    m_Target: 353.5344
     speed: 2
-    m_Value: 963.4174
+    m_Value: 338.31042
   m_Ortho:
     m_Target: 1
     speed: 2

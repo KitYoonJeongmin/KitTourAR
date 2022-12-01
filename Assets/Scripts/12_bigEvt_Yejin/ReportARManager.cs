@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class ReportARManager : MonoBehaviour
 {
     public TimerManager timerManager;
-    public GameObject mapBtn;
     public EventMsg eventMsg;
 
     Dictionary<int, string[]> eventDic;
@@ -25,9 +24,17 @@ public class ReportARManager : MonoBehaviour
     public int evtIndex;
     public bool isAct;
 
+    private GameObject reportPref;
+
     private void Awake()
     {
+        //textUI.SetActive(true);
         var obj = FindObjectsOfType<ReportARManager>();
+
+        reportPref = gameObject.transform.Find("ReportPref").gameObject;
+        if (reportPref.activeSelf == true)
+            reportPref.SetActive(false);
+
         if (obj.Length == 1)
         {
             DontDestroyOnLoad(gameObject);
