@@ -12,7 +12,10 @@ public class SmallEventManager : MonoBehaviour
 
     public GameObject btnUi;
     public GameObject textUi;        //화면에 출력될 canvas(UI)
+    public GameObject reportTextUi;
     public Text eventText;           //text event(canvas 내부 text(Legacy) 연결)
+    public Text reportText;
+
     public GameObject imageUi;       //image event (canvas 내부 image 연결)
 
     public GameObject scanPlace;     //어느 장소의 이벤트를 출력할지 지정
@@ -26,6 +29,11 @@ public class SmallEventManager : MonoBehaviour
 
     void Start()
     {
+        //textAryIndex = 0;
+
+        reportTextUi.SetActive(true);
+        Debug.Log("hi");
+        isView = false;
         imgDetectWord.Add("휴먼",0);
         imgDetectWord.Add("너굴맨",1);
         imgDetectWord.Add("영운선배", 2);
@@ -39,18 +47,26 @@ public class SmallEventManager : MonoBehaviour
 
 
         if (placeInfo.documentId.FirstOrDefault() == 'r')
+        {
+            
+            TimerManager.countReport = 5;
             ReportEventView(placeInfo.documentId);
+            reportTextUi.SetActive(isView);
+        }
+
         else
         {
             Debug.Log(placeInfo.documentId);
             TextView(placeInfo.documentId);
+
+
+            if (!gameObject.name.Contains("Btn") && isBtnView == false)
+            {
+                Btn(placeInfo.documentId);
+            }
+
+            textUi.SetActive(isView);
         }
-        if (!gameObject.name.Contains("Btn") && isBtnView == false)
-        {
-            Btn(placeInfo.documentId);
-        }
-        
-        textUi.SetActive(isView);
         
     }
 
@@ -96,6 +112,33 @@ public class SmallEventManager : MonoBehaviour
 
         textAryIndex++;
     }
+
+    //여기 함수 제대로 돌아가는지 확인할 것
+    //그리고 텍스트이벤트 Ui도 !!!
+    //스몰이벤트 좌표 기숙사로 바꿔서 이벤트 잘 실행되는지 확인해볼 것
+    public void ReportEventView(string documentId)
+    {
+        int textLen = reportDB.textNum(documentId);
+        string eventData = reportDB.GetText(documentId, textAryIndex);
+
+        //TimerManager.tmp = eventData;
+
+        if (textAryIndex == textLen)
+        {
+            isView = false;
+            textAryIndex = 0;
+            reportTextUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
+            return;
+        }
+
+        reportText.text = eventData;
+        reportText.text = reportText.text.Replace("\\n", "\n"); // 줄바꿈 수정
+
+        isView = true;
+
+        textAryIndex++;
+    }
+
     void ImageView(string imageWord)
     {
         imgDetectWord.TryGetValue(imageWord, out int imageNum);
@@ -113,43 +156,5 @@ public class SmallEventManager : MonoBehaviour
         else if (documentId.Contains("internationalEducation")) { btnIndex = 6; isBtnView = true; }
         else if (documentId.Contains("library")) { btnIndex = 7; isBtnView = true; }
         btnUi.SetActive(isBtnView);
-    }
-
-    public void ReportEventView(string documentId)
-    {
-        int textLen = reportDB.textNum(documentId);
-        string eventData = reportDB.GetText(documentId, textAryIndex);
-
-        if (textAryIndex == textLen)
-        {
-
-            if (gameObject.name.Contains("Btn"))
-            {
-                isBtnView = true;
-                btnUi.SetActive(isBtnView);
-            }
-            isView = false;
-            textAryIndex = 0;
-            textUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
-            return;
-        }
-        foreach (KeyValuePair<string, int> word in imgDetectWord) // text에 img를 출력할 단어가 있는지 검사
-        {
-            if (eventData.Contains(word.Key)) //text에 img를 출력할 단어가 있다면
-            {
-                ImageView(word.Key); // 해당 단어에 적합한 이미지 출력
-                break;
-                //isImage = true; //이미지 출력중
-            }
-            imageUi.SetActive(false); //이미지 항상 비활성화
-
-        }
-
-        eventText.text = eventData;
-        eventText.text = eventText.text.Replace("\\n", "\n"); // 줄바꿈 수정
-
-        isView = true;
-
-        textAryIndex++;
     }
 }

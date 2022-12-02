@@ -53,14 +53,21 @@ public class SmallEventStart : MonoBehaviour
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
 
-                else if (hitobj.collider.CompareTag("reportEventPre"))
+                
+                if (hitobj.collider.CompareTag("reportEventPre"))
                 {
                     GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
-                    TimerManager.countReport++;
-                    if (!smallEventManager.isView) // UI가 비활성 상태면 띄우기
-                        smallEventManager.View(GameObject.Find("ReportEvt"));
-                    reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
+
+                    if (!smallEventManager.isView)
+                    {
+                        //TimerManager.tmp = "뷰까지 동작가능";
+                        smallEventManager.View(GameObject.Find("ReportPref"));
+                    }
+                        
+
+                    //reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
                 }
+                
             }
         }
     }

@@ -9,87 +9,70 @@ using Firebase.Firestore;
 using System.Threading.Tasks;
 using System.Threading;
 
+
 public class ReportARGen : MonoBehaviour
 {
-    //오브젝트-유저 사이의 거리와 오브젝트 생성 여부를 알려주는 text
-
     public string place;
-    ARRaycastManager arRayMan; //ARRaycastManager 컴포넌트 저장
+    public GameObject reportPre;
     private GameObject GPSManager;
     private Vector3 currentLocation;
-    public bool isInPlace;
-    public bool isGen;
-    public int distance; //이벤트 프리팹을 활성화/비활성화 하기위한 거리
 
-    public GameObject reportPre;
-    [Serializable]
-    public struct LatLong //위경도 저장 구조체
+    public bool findReport;
+    public bool isGen;
+
+    public int distance;
+    ARRaycastManager arRayMan;
+
+    public struct LatLong
     {
         public string name;
         public float lat;
         public float lon;
-        public bool isDestroy;
+        public bool isDestroyed;
     }
 
     [Header("위치 정보")]
-    public LatLong[] latLongs; //위경도 저장 배열
+    public LatLong[] reportLatLongs;
 
-    // Start is called before the first frame update
     void Start()
     {
-        latLongs = new LatLong[12];
-        GetLatLonFromFB();
-
+        distance = 7;
+        reportLatLongs = new LatLong[12];
+        GetReportsLatLonFromFB();
         GPSManager = GameObject.Find("GPS Manager");
 
-        //인디케이터 비활성화
         reportPre.SetActive(false);
-        isInPlace = false;
-
-        //컴포넌트에서 ARRaycastManaget 획득
+        findReport = false;
         arRayMan = GetComponent<ARRaycastManager>();
         InvokeRepeating("GetUNTCoord", 0.5f, 0.2f);
         InvokeRepeating("DetectPlace", 0.1f, 0.2f);
     }
 
-    /** 근처에 이벤트를 생성할 곳이 있는지 확인*/
     void DetectPlace()
     {
-        foreach (LatLong latLong in latLongs)
+        foreach (LatLong latLong in reportLatLongs)
         {
-            if(latLong.isDestroy == false)
+            if (Vector3.Magnitude(currentLocation - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon)) > distance)
             {
-                if (Vector3.Magnitude(currentLocation - GPSEncoder.GPSToUCS(latLong.lat, latLong.lon)) > distance)
-                {
-                    isInPlace = false;
-                    continue;
-                }
-                isInPlace = true;
-                place = latLong.name;
-                return;
+                findReport = false;
+                continue;
             }
+
+            findReport = true;
+            place = latLong.name;
+            return;
         }
     }
 
-    public void ReportDestroy(string repoPlace)
-    {
-        for(int i = 0; i<latLongs.Length; i++)
-        {
-            if (latLongs[i].name == repoPlace)
-                latLongs[i].isDestroy = true;
-        }
-    }
-
-    /**이벤트 프리팹 생성*/
     void DetectGround()
     {
         //스마트폰 스크린의 Center를 찾음
         Vector2 centerPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
         //Ray에 부딪힌 대상들의 정보를 저장할 리스트 생성
         List<ARRaycastHit> hitInfos = new List<ARRaycastHit>();
-        foreach(var latLong in latLongs)
+        foreach (var latLong in reportLatLongs)
         {
-            if(latLong.isDestroy == false)
+            if (latLong.isDestroyed == false)
             {
                 //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
                 if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
@@ -105,7 +88,6 @@ public class ReportARGen : MonoBehaviour
         }
     }
 
-    /**유저가 이벤트 프리팹과 멀어질 때 프리팹 비활성화*/
     void DestroyEventPre()
     {
         Debug.Log("Destroy");
@@ -113,12 +95,9 @@ public class ReportARGen : MonoBehaviour
         isGen = false;
     }
 
-    /**이벤트 프리팹의 활성화, 비활성화를 감지*/
     void Update()
     {
-
-        //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
-        if (!isInPlace)
+        if (!findReport)
         {
             if (isGen)
             {
@@ -126,38 +105,47 @@ public class ReportARGen : MonoBehaviour
             }
             return;
         }
-        if (!isGen )
+        if (!isGen)
         {
             DetectGround();
         }
     }
-    /**현재위치를 unity coord로 변환한 것을 0.2초마다 가져옴*/
+
     void GetUNTCoord()
     {
         currentLocation = GPS.unityCoor;
     }
-
-    async void GetLatLonFromFB()
+    public void ReportDestroy(string repoPlace)
     {
+        reportPre.SetActive(false);
 
+        for (int i = 0; i < reportLatLongs.Length; i++)
+        {
+            if (reportLatLongs[i].name == repoPlace)
+            {
+                reportLatLongs[i].isDestroyed = true;
+            }
+        }
+    }
+
+    async void GetReportsLatLonFromFB()
+    {
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
-        CollectionReference playlistref = db.Collection("reports");
-        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();  //data들을 가져오라고 서버에 요청
+        CollectionReference playlistref = db.Collection("reports"); 
+        QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();
 
         int i = 0;
-
-        foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
+        foreach (DocumentSnapshot document in snapshot.Documents)
         {
-            latLongs[i].name = document.Id.ToString();
-            Dictionary<string, object> documentDictionary = document.ToDictionary();    //각 문서를 dictionary로 받음.
+            reportLatLongs[i].name = document.Id.ToString();
+            Dictionary<string, object> documentDictionary = document.ToDictionary();
             GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
-            latLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
-            latLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
-            latLongs[i].isDestroy = false;
+            reportLatLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
+            reportLatLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
+
+            reportLatLongs[i].isDestroyed = false;
 
             i++;
         }
     }
-    
 }
-
