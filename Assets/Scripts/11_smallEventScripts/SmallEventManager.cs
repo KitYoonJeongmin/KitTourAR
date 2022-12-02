@@ -14,6 +14,8 @@ public class SmallEventManager : MonoBehaviour
     public GameObject textUi;        //화면에 출력될 canvas(UI)
     public GameObject reportTextUi;
     public Text eventText;           //text event(canvas 내부 text(Legacy) 연결)
+    public Text reportText;
+
     public GameObject imageUi;       //image event (canvas 내부 image 연결)
 
     public GameObject scanPlace;     //어느 장소의 이벤트를 출력할지 지정
@@ -27,7 +29,9 @@ public class SmallEventManager : MonoBehaviour
 
     void Start()
     {
-        //reportTextUi.SetActive(true);
+        //textAryIndex = 0;
+
+        reportTextUi.SetActive(true);
         Debug.Log("hi");
         isView = false;
         imgDetectWord.Add("휴먼",0);
@@ -111,7 +115,7 @@ public class SmallEventManager : MonoBehaviour
         int textLen = reportDB.textNum(documentId);
         string eventData = reportDB.GetText(documentId, textAryIndex);
 
-        TimerManager.tmp = eventData;
+        //TimerManager.tmp = eventData;
 
         if (textAryIndex == textLen)
         {
@@ -121,8 +125,8 @@ public class SmallEventManager : MonoBehaviour
             return;
         }
 
-        eventText.text = eventData;
-        eventText.text = eventText.text.Replace("\\n", "\n"); // 줄바꿈 수정
+        reportText.text = eventData;
+        reportText.text = reportText.text.Replace("\\n", "\n"); // 줄바꿈 수정
 
         isView = true;
 

@@ -54,7 +54,7 @@ public class SmallEventStart : MonoBehaviour
 
                     if (!smallEventManager.isView)
                     {
-                        TimerManager.tmp = "뷰까지 동작가능";
+                        //TimerManager.tmp = "뷰까지 동작가능";
                         smallEventManager.View(GameObject.Find("ReportPref"));
                     }
                         
