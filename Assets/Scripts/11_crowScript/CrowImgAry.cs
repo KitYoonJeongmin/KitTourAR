@@ -17,6 +17,6 @@ public class CrowImgAry : MonoBehaviour
 
     void Update()
     {
-        image.sprite = sprites[CrowTrigger.crowIndex];
+        image.sprite = sprites[IsCatch.crowImgNum];
     }
 }

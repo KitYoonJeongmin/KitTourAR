@@ -12,6 +12,6 @@ public class ChangeName : MonoBehaviour
     void Start()
     {
         name = gameObject.GetComponent<Text>();
-        name.text = nameList[CrowTrigger.crowIndex];
+        name.text = nameList[IsCatch.crowImgNum];
     }
 }

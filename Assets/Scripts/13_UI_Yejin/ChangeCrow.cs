@@ -11,8 +11,7 @@ public class ChangeCrow : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(CrowTrigger.crowIndex);
         crow = gameObject.GetComponent<Image>();
-        crow.sprite = crowSp[CrowTrigger.crowIndex];
+        crow.sprite = crowSp[IsCatch.crowImgNum];
     }
 }

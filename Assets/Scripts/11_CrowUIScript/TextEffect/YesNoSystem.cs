@@ -23,6 +23,7 @@ public class YesNoSystem : MonoBehaviour
         system.Begin(info,1);
         system.isSelect = true;
 
+        Debug.Log("hello1 " + IsCatch.crowMap);
         //Debug.Log("HI"); Debug.Log("HI");
         system.Begin(info,1);
     }
