@@ -35,7 +35,7 @@ public class LoadingManager : MonoBehaviour
 
             if (progressbar.value >= 1f)
             {
-                loadtext.text = "À§Ä¡ È®ÀÎ ¿Ï·á";
+                loadtext.text = "ë¡œë”© ì™„ë£Œ";
                 operation.allowSceneActivation = true;
             }
            
