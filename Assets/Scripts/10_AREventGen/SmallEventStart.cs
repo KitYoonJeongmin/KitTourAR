@@ -57,16 +57,18 @@ public class SmallEventStart : MonoBehaviour
                         //TimerManager.tmp = "뷰까지 동작가능";
                         smallEventManager.View(GameObject.Find("ReportPref"));
                     }
-                        
-
-                    //reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
                 }
-                
+
             }
         }
     }
     public void NextTextView()
     {
         smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
+    }
+
+    public void ReportsNextTextView()
+    {
+        smallEventManager.ReportEventView(GetComponent<PlaceInfo>().documentId);
     }
 }
