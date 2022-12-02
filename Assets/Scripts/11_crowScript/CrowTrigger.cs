@@ -11,7 +11,11 @@ public class CrowTrigger : MonoBehaviour
     CrowImgAry crowImgAry;
 
     public int crowIndex;
-
+    private void Start()
+    {
+        if(PlayerPrefs.GetInt("Crow"+ crowIndex.ToString())==1) { gameObject.SetActive(false); }
+    }
+    
     private void Awake()
     {
         if (IsCatch.crowMap == 1 || IsCatch.crowMap == 2)
@@ -25,9 +29,10 @@ public class CrowTrigger : MonoBehaviour
     {
         fTickTime += Time.deltaTime;
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
+        
         if (!(other.gameObject.tag == "mapCharacter")) { return; } //충돌된 object가 character가 아니면 return 시켜줌
         IsCatch.crowImgNum = crowIndex;
         gameObject.SetActive(false);
