@@ -46,7 +46,7 @@ public class AREventGen : MonoBehaviour
 
     void Start()
     {
-        distance = 7;
+        distance = 10;
         latLongs = new LatLong[22];
         bigEvtLatLongs = new LatLong[4];
         GetLatLonFromFB();

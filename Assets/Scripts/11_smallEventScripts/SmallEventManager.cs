@@ -30,8 +30,8 @@ public class SmallEventManager : MonoBehaviour
     void Start()
     {
         //textAryIndex = 0;
-
-        reportTextUi.SetActive(true);
+        if(reportTextUi != null)
+            reportTextUi.SetActive(true);
         Debug.Log("hi");
         isView = false;
         imgDetectWord.Add("휴먼",0);
@@ -141,6 +141,7 @@ public class SmallEventManager : MonoBehaviour
 
     void ImageView(string imageWord)
     {
+        Debug.Log("-------------------------image----------------");
         imgDetectWord.TryGetValue(imageWord, out int imageNum);
         imageUi.GetComponent<Image>().sprite = imgArray[imageNum];
         imageUi.SetActive(true);
