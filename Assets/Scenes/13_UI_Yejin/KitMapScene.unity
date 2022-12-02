@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4405034, g: 0.4889934, b: 0.569383, a: 1}
+  m_IndirectSpecularColor: {r: 0.440503, g: 0.4889931, b: 0.5693828, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -887,7 +887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (2)
+      value: 2_CrowEventTrigger (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive
@@ -1118,9 +1118,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 922141366238391161, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: crowIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (1)
+      value: 1_CrowEventTrigger (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive
@@ -1723,7 +1727,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger
+      value: 0_CrowEventTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_RootOrder
@@ -1795,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (3)
+      value: 3_CrowEventTrigger (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive

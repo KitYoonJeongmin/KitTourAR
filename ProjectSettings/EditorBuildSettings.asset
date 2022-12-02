@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/13_UI_Taeyeon/GameStart.unity
+    guid: c3f666cc13a5aa645a7b6d792a4d9eb1
+  - enabled: 1
+    path: Assets/Scenes/13_UI_Taeyeon/Loading.unity
+    guid: 0da56a2205f9b3b4fa4cf5a0df6cb96b
+  - enabled: 1
     path: Assets/Scenes/13_UI_Yejin/GenUI 1.unity
     guid: b89e9568e034d664fa3fcc23b28920e4
   - enabled: 1

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class CrowImgAry : MonoBehaviour
 {
-    CrowTrigger crowTrigger;
     public Image image;
 
     [SerializeField]
@@ -18,6 +17,6 @@ public class CrowImgAry : MonoBehaviour
 
     void Update()
     {
-        image.sprite = sprites[crowTrigger.crowIndex];
+        image.sprite = sprites[CrowTrigger.crowIndex];
     }
 }
