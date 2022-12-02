@@ -53,7 +53,7 @@ public class YesNoSystem : MonoBehaviour
         foreach (var letter in sentence)
         {
             txtSentence.text += letter;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
