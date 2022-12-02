@@ -3,7 +3,7 @@
 
 using UnityEngine;
 
-public sealed class GPSEncoder: MonoBehaviour
+public sealed class GPSEncoder
 {
 
 	/////////////////////////////////////////////////
@@ -68,10 +68,7 @@ public sealed class GPSEncoder: MonoBehaviour
 	#region Singleton
 	private static GPSEncoder _singleton;
 
-	private GPSEncoder()
-	{
 
-	}
 
 	private static GPSEncoder GetInstance()
 	{

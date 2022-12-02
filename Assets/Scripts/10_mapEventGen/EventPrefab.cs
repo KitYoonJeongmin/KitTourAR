@@ -16,19 +16,14 @@ public class EventPrefab : MonoBehaviour
         foreach (DocumentSnapshot document in snapshot.Documents)   //각 문서들에 접근
         {
             Dictionary<string, object> documentDictionary = document.ToDictionary();    //각 문서를 dictionary로 받음.
-            //Debug.Log("Name:  " + documentDictionary["name"] as string);
+            
             
             Vector3 coor;   //unity 좌표를 저장
 
             Dictionary<string, object> statistics = new Dictionary<string, object> { };
-            statistics = (Dictionary<string, object>)documentDictionary["unityCoord"];
-                
-            coor.x = float.Parse((statistics["x"]).ToString());
-            coor.y = float.Parse((statistics["y"]).ToString()) + 2.0f;
-            coor.z = float.Parse((statistics["z"]).ToString());
-            //string,Parse(statistics[item].ToString()
-
-            Debug.Log((statistics["x"]).ToString() + (statistics["y"]).ToString() + (statistics["z"]).ToString());
+            GeoPoint geo = (GeoPoint)documentDictionary["coordinate"];
+            coor = GPSEncoder.GPSToUCS(float.Parse(geo.Latitude.ToString()), float.Parse(geo.Longitude.ToString()));   
+            
 
             newBuilding(coor);
             
