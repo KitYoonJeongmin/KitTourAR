@@ -34,25 +34,28 @@ public class ButtonManager : MonoBehaviour
 
     void TextEvent()
     {
-        Debug.Log(btnObj.name);
+
         btnObj.SetActive(true);
         btnObj.transform.GetComponent<PlaceInfo>().documentId = EventSystem.current.currentSelectedGameObject.name;
-        //btnObj.transform.GetComponent<ChildTextEvent>();
-        Debug.Log("------------------BtnTTTTTTTTTTTTTTTouch!!!!!------------");
-        firstView = true;
-        Debug.Log(textCanvas.name);
-        //Debug.Log(LayoutSetting.layoutIndex.ToString());
-        textCanvas.SetActive(true);
-        
-        
-        Debug.Log("touch Btn");
-        //GameObject.Find("BtnSmallEvent").GetComponent<SmallEventManager>().View(gameObject);
         if (btnObj.transform.GetComponent<PlaceInfo>().documentId == "restaurant")
         {
-            textCanvas.transform.Find("TextImage").Find("DialogText").GetComponent<Text>().text = "¿À´ÃÀº ¹» ¸ÔÁö?";
+            //textCanvas.transform.Find("TextImage").Find("DialogText").GetComponent<Text>().text = "¿À´ÃÀº ¹» ¸ÔÁö?";
             LayoutSetting.layoutIndex = 1;
-            layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(true);
+            if (layoutSetting.layout[LayoutSetting.layoutIndex].activeSelf)
+            {
+                layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(false);
+            }
+            else
+            {
+                layoutSetting.layout[LayoutSetting.layoutIndex].SetActive(true);
+            }
+            
+            return;
         }
+        firstView = true;
+
+
+        textCanvas.SetActive(true);
         btnUi.SetActive(false);   //¹öÆ° Å¬¸¯ÇÏ¸é ¹öÆ°¸®½ºÆ® ·¹ÀÌ¾Æ¿ôÀº false
     }
 }

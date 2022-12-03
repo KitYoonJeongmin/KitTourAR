@@ -148,8 +148,8 @@ public class SmallEventManager : MonoBehaviour
     public void Btn(string documentId)
     {
         Debug.Log(documentId);
-        if (documentId.Contains("stuentHall_underground")) { btnIndex = 0; isBtnView = true; }
-        else if (documentId.Contains("stuentHall_ground")) { btnIndex = 1; isBtnView = true; }
+        if (documentId.Contains("studentHall_underground")) { btnIndex = 0; isBtnView = true; }
+        else if (documentId.Contains("studentHall_ground")) { btnIndex = 1; isBtnView = true; }
         else if (documentId.Contains("busStop")) { btnIndex = 3; isBtnView = true; }
         else if (documentId.Contains("digitalBuilding")) { btnIndex = 4; isBtnView = true; }
         else if (documentId.Contains("dormitory")) { btnIndex = 5; isBtnView = true; }
