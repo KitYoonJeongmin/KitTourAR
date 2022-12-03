@@ -39,12 +39,12 @@ public class ReportDB : MonoBehaviour
             //List<object> => List<string> 변환
             List<string> strList = objList.Select(s => (string)s).ToList();
 
-            foreach (var i in strList)    Debug.Log(i);   //strList 데이터 출력(확인용)
+            foreach (var i in strList) Debug.Log(i);   //strList 데이터 출력(확인용)
 
             textData.Add(document.Id, strList.ToArray());
         }
     }
-    
+
     public string GetText(string documentId, int textAryIndex)
     {
         //return textData[documentId][0];

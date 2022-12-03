@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -11,6 +12,8 @@ public class SmallEventStart : MonoBehaviour
     public SmallEventManager smallEventManager;
     public ReportARGen reportARGen;
     private ARRaycastManager raycastMgr;
+
+    public Text txt;
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>(); //Ray가 맞은 오브젝트 정보 저장
     [SerializeField] private Camera arCamera;
@@ -53,21 +56,18 @@ public class SmallEventStart : MonoBehaviour
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
 
-                
                 if (hitobj.collider.CompareTag("reportEventPre"))
                 {
                     GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
+                    txt.text = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
 
                     if (!smallEventManager.isView)
                     {
                         //TimerManager.tmp = "뷰까지 동작가능";
                         smallEventManager.View(GameObject.Find("ReportPref"));
                     }
-                        
-
-                    //reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
                 }
-                
+
             }
         }
     }
@@ -75,6 +75,11 @@ public class SmallEventStart : MonoBehaviour
     {
         smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
     }
+    public void ReportsNextTextView()
+    {
+        smallEventManager.ReportEventView(GetComponent<PlaceInfo>().documentId);
+    }
+
     public void MatChange(int matNum) //material 변경
     {
         gameObject.GetComponent<MeshRenderer>().material = mat[matNum];

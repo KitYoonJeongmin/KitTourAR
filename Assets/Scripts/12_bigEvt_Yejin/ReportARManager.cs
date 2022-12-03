@@ -25,6 +25,7 @@ public class ReportARManager : MonoBehaviour
     public bool isAct;
 
     private GameObject reportPref;
+    private GameObject timerUI;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class ReportARManager : MonoBehaviour
         var obj = FindObjectsOfType<ReportARManager>();
 
         reportPref = gameObject.transform.Find("ReportPref").gameObject;
+        timerUI = gameObject.transform.Find("EventBar").gameObject;
         if (reportPref.activeSelf == true)
             reportPref.SetActive(false);
 
@@ -47,7 +49,7 @@ public class ReportARManager : MonoBehaviour
 
     void Start()
     {
-        if (ReportMapManager.reportEvt > 0 && ReportMapManager.reportEvt < 5)
+        if (ReportMapManager.reportEvt > 0 && ReportMapManager.reportEvt < 9)
         {
             evtIndex = 0;
             textUI.SetActive(false);
@@ -69,6 +71,7 @@ public class ReportARManager : MonoBehaviour
             if (ReportMapManager.reportEvt == 1)
             {
                 ReportMapManager.reportEvt = 10;
+                //timerUI.SetActive(true);
                 timerManager.TimeSet();
             }
             

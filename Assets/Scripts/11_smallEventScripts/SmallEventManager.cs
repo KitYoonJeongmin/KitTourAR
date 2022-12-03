@@ -9,6 +9,7 @@ public class SmallEventManager : MonoBehaviour
 {
     public DBTextManager textManager;
     public ReportDB reportDB;
+    public ReportARGen reportARGen;
 
     public GameObject btnUi;
     public GameObject textUi;        //화면에 출력될 canvas(UI)
@@ -30,8 +31,8 @@ public class SmallEventManager : MonoBehaviour
     void Start()
     {
         //textAryIndex = 0;
-        if(reportTextUi != null)
-            reportTextUi.SetActive(true);
+        //if(reportTextUi != null)
+        //    reportTextUi.SetActive(true);
         Debug.Log("hi");
         isView = false;
         imgDetectWord.Add("휴먼",0);
@@ -45,7 +46,7 @@ public class SmallEventManager : MonoBehaviour
         scanPlace = place;
         PlaceInfo placeInfo = scanPlace.GetComponent<PlaceInfo>();
 
-
+        //placeInfo.name.Contains("Report")
         if (placeInfo.documentId.FirstOrDefault() == 'r')
         {
             
@@ -113,21 +114,19 @@ public class SmallEventManager : MonoBehaviour
         textAryIndex++;
     }
 
-    //여기 함수 제대로 돌아가는지 확인할 것
-    //그리고 텍스트이벤트 Ui도 !!!
-    //스몰이벤트 좌표 기숙사로 바꿔서 이벤트 잘 실행되는지 확인해볼 것
     public void ReportEventView(string documentId)
     {
         int textLen = reportDB.textNum(documentId);
         string eventData = reportDB.GetText(documentId, textAryIndex);
-
-        //TimerManager.tmp = eventData;
 
         if (textAryIndex == textLen)
         {
             isView = false;
             textAryIndex = 0;
             reportTextUi.SetActive(isView); //text 더이상 볼거 없으면 UI바로 비활성화 시켜줬습니다.
+
+            TimerManager.countReport++;
+            reportARGen.ReportDestroy(GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place);
             return;
         }
 

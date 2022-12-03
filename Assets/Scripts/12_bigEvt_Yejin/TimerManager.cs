@@ -10,12 +10,10 @@ public class TimerManager : MonoBehaviour
 
     public Text timerText;
     public Text reportText;
-    public Text tmp_;
     public static float time = 3600f;
     private float countDown = 1;
 
     public static int countReport;
-    public static string tmp;
 
     private void Awake()
     {
@@ -29,7 +27,6 @@ public class TimerManager : MonoBehaviour
             gameObject.SetActive(true);
             countDown = time;
             countReport = 0;
-            tmp = "테스트";
             ReportMapManager.reportEvt = 9; //reportEvt == 9, 게임 진행 상태(대기)
         }
     }
@@ -58,7 +55,6 @@ public class TimerManager : MonoBehaviour
             countDown -= Time.deltaTime;
             timerText.text = ((int)countDown / 60 % 60).ToString() + " : " + ((int)countDown % 60).ToString();
             reportText.text = countReport.ToString() + " 개";
-            tmp_.text = tmp;
         }
         
     }

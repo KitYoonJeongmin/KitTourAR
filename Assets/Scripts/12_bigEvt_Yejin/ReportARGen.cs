@@ -12,6 +12,8 @@ using System.Threading;
 
 public class ReportARGen : MonoBehaviour
 {
+    public Text placeID;
+    public Text isRef;
     public string place;
     public GameObject reportPre;
     private GameObject GPSManager;
@@ -36,7 +38,7 @@ public class ReportARGen : MonoBehaviour
 
     void Start()
     {
-        distance = 7;
+        distance = 15;
         reportLatLongs = new LatLong[12];
         GetReportsLatLonFromFB();
         GPSManager = GameObject.Find("GPS Manager");
@@ -77,9 +79,10 @@ public class ReportARGen : MonoBehaviour
                 //스크린 중앙지점으로 부터 Ray를 발사 했을 때, Plane 타입의 물체가 존재한다면,
                 if (arRayMan.Raycast(centerPoint, hitInfos, TrackableType.Planes))
                 {
+                    isGen = true;
                     //표식 오브젝트 활성화
                     reportPre.SetActive(true);
-                    isGen = true;
+
                     //표식 오브젝트의 위치와 회전값 업데이트
                     reportPre.transform.position = hitInfos[0].pose.position;
                     reportPre.transform.rotation = hitInfos[0].pose.rotation;
@@ -97,6 +100,7 @@ public class ReportARGen : MonoBehaviour
 
     void Update()
     {
+        isRef.text = "ref생성: " + isGen.ToString();
         if (!findReport)
         {
             if (isGen)
@@ -131,20 +135,21 @@ public class ReportARGen : MonoBehaviour
     async void GetReportsLatLonFromFB()
     {
         FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
-        CollectionReference playlistref = db.Collection("reports"); 
+        CollectionReference playlistref = db.Collection("reports");
         QuerySnapshot snapshot = await playlistref.GetSnapshotAsync();
 
         int i = 0;
         foreach (DocumentSnapshot document in snapshot.Documents)
         {
             reportLatLongs[i].name = document.Id.ToString();
+            placeID.text = reportLatLongs[i].name + " is ready";
             Dictionary<string, object> documentDictionary = document.ToDictionary();
             GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
             reportLatLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());
             reportLatLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
 
             reportLatLongs[i].isDestroyed = false;
-
+            Debug.Log("hi");
             i++;
         }
     }
