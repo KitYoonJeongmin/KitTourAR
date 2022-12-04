@@ -85,6 +85,7 @@ public class ReportMapGen : MonoBehaviour
 
         foreach (KeyValuePair<string, GameObject> rl in reportIns)
         {
+            DontDestroyOnLoad(rl.Value);
             rl.Value.SetActive(true);
         }
     }
