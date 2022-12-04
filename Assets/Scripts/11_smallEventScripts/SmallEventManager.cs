@@ -46,11 +46,8 @@ public class SmallEventManager : MonoBehaviour
         scanPlace = place;
         PlaceInfo placeInfo = scanPlace.GetComponent<PlaceInfo>();
 
-        //placeInfo.name.Contains("Report")
-        if (placeInfo.documentId.FirstOrDefault() == 'r')
+        if (place.name.Contains("Report"))
         {
-            
-            TimerManager.countReport = 5;
             ReportEventView(placeInfo.documentId);
             reportTextUi.SetActive(isView);
         }

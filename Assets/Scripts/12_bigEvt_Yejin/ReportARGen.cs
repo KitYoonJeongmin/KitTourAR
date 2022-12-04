@@ -12,7 +12,6 @@ using System.Threading;
 
 public class ReportARGen : MonoBehaviour
 {
-    public Text placeID;
     public Text isRef;
     public string place;
     public GameObject reportPre;
@@ -20,7 +19,7 @@ public class ReportARGen : MonoBehaviour
     private Vector3 currentLocation;
 
     public bool findReport;
-    public bool isGen;
+    public bool isGen = false;
 
     public int distance;
     ARRaycastManager arRayMan;
@@ -38,16 +37,19 @@ public class ReportARGen : MonoBehaviour
 
     void Start()
     {
-        distance = 15;
-        reportLatLongs = new LatLong[12];
-        GetReportsLatLonFromFB();
-        GPSManager = GameObject.Find("GPS Manager");
+        if(ReportMapManager.reportEvt == 9)
+        {
+            distance = 15;
+            reportLatLongs = new LatLong[12];
+            GetReportsLatLonFromFB();
+            GPSManager = GameObject.Find("GPS Manager");
 
-        reportPre.SetActive(false);
-        findReport = false;
-        arRayMan = GetComponent<ARRaycastManager>();
-        InvokeRepeating("GetUNTCoord", 0.5f, 0.2f);
-        InvokeRepeating("DetectPlace", 0.1f, 0.2f);
+            reportPre.SetActive(false);
+            findReport = false;
+            arRayMan = GetComponent<ARRaycastManager>();
+            InvokeRepeating("GetUNTCoord", 0.5f, 0.2f);
+            InvokeRepeating("DetectPlace", 0.1f, 0.2f);
+        }
     }
 
     void DetectPlace()
@@ -82,7 +84,6 @@ public class ReportARGen : MonoBehaviour
                     isGen = true;
                     //표식 오브젝트 활성화
                     reportPre.SetActive(true);
-
                     //표식 오브젝트의 위치와 회전값 업데이트
                     reportPre.transform.position = hitInfos[0].pose.position;
                     reportPre.transform.rotation = hitInfos[0].pose.rotation;
@@ -101,6 +102,7 @@ public class ReportARGen : MonoBehaviour
     void Update()
     {
         isRef.text = "ref생성: " + isGen.ToString();
+
         if (!findReport)
         {
             if (isGen)
@@ -142,7 +144,7 @@ public class ReportARGen : MonoBehaviour
         foreach (DocumentSnapshot document in snapshot.Documents)
         {
             reportLatLongs[i].name = document.Id.ToString();
-            placeID.text = reportLatLongs[i].name + " is ready";
+            Debug.Log(reportLatLongs[i].name + " is ready");
             Dictionary<string, object> documentDictionary = document.ToDictionary();
             GeoPoint geoPoint = (GeoPoint)documentDictionary["coordinate"];
             reportLatLongs[i].lat = float.Parse(geoPoint.Latitude.ToString());

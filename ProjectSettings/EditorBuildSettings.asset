@@ -11,34 +11,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/13_UI_Yejin/GenUI 1.unity
     guid: b89e9568e034d664fa3fcc23b28920e4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEventJeongik/Success.unity
     guid: 89a534232d3a78945a0f2e3fb89969a7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEventJeongik/startScene.unity
     guid: c1eb9ecdc955d7c4a98ae115a4c46277
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEventJeongik/GameOver.unity
     guid: 2e2c1f5414fa34c4d94827347331d625
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEventJeongik/avoidGame.unity
     guid: e1ab8cad992598c49bef00dc33bed3fd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEvt_jeongmin/BigEvtDroneEnd.unity
     guid: 1249fb82510f76b43adca1e5fc5b4927
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEvt_jeongmin/BigEvtDroneShooter.unity
     guid: 53f57b584d635694ba7e4aa28bd126e4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_BigEvt_jeongmin/BigEvtDroneStart.unity
     guid: 698ce74bcdf4a694fbfcafd39fd0f598
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_bigEvt_Taeyeon/FlogTalk.unity
     guid: 48c025221f78b924ab5803aadee4ec6a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/12_bigEvt_Taeyeon/Rhythm.unity
     guid: f383b10420aedf0419c24f6c0af73af2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/11_crowUI/SamJocUI.unity
     guid: 44ac52d0961421f4ca7f9c0d78d16785
   m_configObjects:

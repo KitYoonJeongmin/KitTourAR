@@ -13,7 +13,7 @@ public class SmallEventStart : MonoBehaviour
     public ReportARGen reportARGen;
     private ARRaycastManager raycastMgr;
 
-    public Text txt;
+    public static string destroyMapObj;
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>(); //Ray가 맞은 오브젝트 정보 저장
     [SerializeField] private Camera arCamera;
@@ -39,7 +39,6 @@ public class SmallEventStart : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitobj)) //맞은 오브젝트가 있으면 hitobj에 저장하고 if들어감
             {
-
                 //터치한 곳에 오브젝트 이름이 smallEvent를 포함하면
                 if (hitobj.collider.CompareTag("smallEventPre"))
                 {
@@ -58,9 +57,8 @@ public class SmallEventStart : MonoBehaviour
 
                 if (hitobj.collider.CompareTag("reportEventPre"))
                 {
-                    GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
-                    txt.text = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
-
+                    gameObject.GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
+                    destroyMapObj = gameObject.GetComponent<PlaceInfo>().documentId;
                     if (!smallEventManager.isView)
                     {
                         //TimerManager.tmp = "뷰까지 동작가능";

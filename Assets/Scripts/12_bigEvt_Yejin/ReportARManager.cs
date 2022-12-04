@@ -24,29 +24,6 @@ public class ReportARManager : MonoBehaviour
     public int evtIndex;
     public bool isAct;
 
-    private GameObject reportPref;
-    private GameObject timerUI;
-
-    private void Awake()
-    {
-        //textUI.SetActive(true);
-        var obj = FindObjectsOfType<ReportARManager>();
-
-        reportPref = gameObject.transform.Find("ReportPref").gameObject;
-        timerUI = gameObject.transform.Find("EventBar").gameObject;
-        if (reportPref.activeSelf == true)
-            reportPref.SetActive(false);
-
-        if (obj.Length == 1)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     void Start()
     {
         if (ReportMapManager.reportEvt > 0 && ReportMapManager.reportEvt < 9)

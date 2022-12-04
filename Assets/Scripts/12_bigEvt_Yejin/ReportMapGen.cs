@@ -17,18 +17,26 @@ public class ReportMapGen : MonoBehaviour
         if (obj.Length == 1)
         {
             DontDestroyOnLoad(gameObject);
+
+            foreach (KeyValuePair<string, GameObject> rl in reportIns)
+            {
+                rl.Value.SetActive(false);
+            }
         }
         else
         {
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
-        Debug.Log(reportIns.Count);
         if (ReportMapManager.reportEvt == 9)
         {
-            foreach(KeyValuePair<string, GameObject> rl in reportIns)
+            if (reportIns.ContainsKey(SmallEventStart.destroyMapObj))
+                reportIns.Remove(SmallEventStart.destroyMapObj);
+
+            foreach (KeyValuePair<string, GameObject> rl in reportIns)
             {
                 rl.Value.SetActive(true);
             }
