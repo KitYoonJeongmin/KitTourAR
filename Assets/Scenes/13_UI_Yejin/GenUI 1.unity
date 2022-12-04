@@ -560,6 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerManager: {fileID: 521518901}
   eventMsg: {fileID: 288277502}
+  timer: {fileID: 521518900}
   arCamera: {fileID: 1663781105}
   textUI: {fileID: 1776699970}
   evtText: {fileID: 1776699969}
@@ -1051,12 +1052,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008434f587d56bc44bff0177d1ca7088, type: 3}
+--- !u!1 &521518900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8242290799154824594, guid: 008434f587d56bc44bff0177d1ca7088, type: 3}
+  m_PrefabInstance: {fileID: 521518899}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &521518901 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8242290798870955454, guid: 008434f587d56bc44bff0177d1ca7088, type: 3}
   m_PrefabInstance: {fileID: 521518899}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 521518900}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ad049dad06c7574abb18fd45d47af0a, type: 3}

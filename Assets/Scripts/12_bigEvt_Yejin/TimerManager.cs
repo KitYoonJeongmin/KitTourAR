@@ -11,12 +11,18 @@ public class TimerManager : MonoBehaviour
     public Text timerText;
     public Text reportText;
     public static float time = 3600f;
+    private int eventViewFrameWait = 30;
+
     private float countDown = 1;
+    public static bool gameEnd = false;
 
     public static int countReport;
 
     private void Awake()
     {
+        if (gameEnd == true)
+            Destroy(gameObject);
+
         var obj = FindObjectsOfType<TimerManager>();
 
         if (obj.Length == 1)
@@ -31,9 +37,13 @@ public class TimerManager : MonoBehaviour
 
     public void TimeSet()
     {
+        if (gameEnd == true)
+            Destroy(gameObject);
         gameObject.SetActive(false);
         if (ReportMapManager.reportEvt == 10) //reportEvt == 10, ≈∏¿Ã∏” load
         {
+            if (gameEnd == true)
+                gameObject.transform.Find("Image").gameObject.SetActive(false);
             gameObject.SetActive(true);
             countDown = time;
             countReport = 0;
@@ -46,6 +56,9 @@ public class TimerManager : MonoBehaviour
     {
         if(Mathf.Floor(countDown) <= 0 && ReportMapManager.reportEvt == 9)  
         {
+            SceneManager.LoadScene("GenUI 1");
+
+            gameObject.transform.Find("Image").gameObject.SetActive(false);
             if (countReport > 5)
                 ReportMapManager.reportEvt = 2;
             else if (countReport > 0)
@@ -55,12 +68,23 @@ public class TimerManager : MonoBehaviour
             else
                 ReportMapManager.reportEvt = 4;
 
-            SceneManager.LoadScene("GenUI 1");
-            reportARManager.TextView();
-            Destroy(gameObject);
+            
+            eventViewFrameWait--;
+            if (eventViewFrameWait <= 0)
+            {
+                gameEnd = true;
+                reportARManager.TextView();
+                Destroy(gameObject);
+                eventViewFrameWait = 5;
+            }
         }
         else
         {
+            if (gameEnd == true)
+            {
+                Destroy(gameObject);
+            }
+                
             Debug.Log(ReportMapManager.reportEvt);
             countDown -= Time.deltaTime;
             timerText.text = ((int)countDown / 60 % 60).ToString() + " : " + ((int)countDown % 60).ToString();

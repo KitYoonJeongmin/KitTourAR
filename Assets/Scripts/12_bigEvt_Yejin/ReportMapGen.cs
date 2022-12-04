@@ -13,7 +13,11 @@ public class ReportMapGen : MonoBehaviour
     private void Awake()
     {
         var obj = FindObjectsOfType<ReportMapGen>();
-
+        if(ReportARManager.mapDes == true)
+        {
+            Destroy(gameObject);
+            return;
+        }    
         if (obj.Length == 1)
         {
             DontDestroyOnLoad(gameObject);
@@ -41,7 +45,6 @@ public class ReportMapGen : MonoBehaviour
                 rl.Value.SetActive(true);
             }
         }
-            
     }
     public async void ReportsEventStart()
     {
@@ -83,7 +86,6 @@ public class ReportMapGen : MonoBehaviour
         foreach (KeyValuePair<string, GameObject> rl in reportIns)
         {
             rl.Value.SetActive(true);
-            DontDestroyOnLoad(rl.Value);
         }
     }
 }

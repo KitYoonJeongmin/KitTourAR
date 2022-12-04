@@ -11,6 +11,8 @@ public class ReportARManager : MonoBehaviour
 {
     public TimerManager timerManager;
     public EventMsg eventMsg;
+    public static bool mapDes;
+    public static int reportCount;
 
     Dictionary<int, string[]> eventDic;
 
@@ -37,6 +39,8 @@ public class ReportARManager : MonoBehaviour
 
     public void TextView()
     {
+        
+
         eventDic = eventMsg.eventData;
         if (textUI.activeSelf == false)
         {
@@ -48,6 +52,8 @@ public class ReportARManager : MonoBehaviour
             if (ReportMapManager.reportEvt == 1)
             {
                 ReportMapManager.reportEvt = 10;
+                if (TimerManager.gameEnd == true)
+                    return;
                 //timerUI.SetActive(true);
                 timerManager.TimeSet();
             }
@@ -57,7 +63,7 @@ public class ReportARManager : MonoBehaviour
 
             if (ReportMapManager.reportEvt > 1 && ReportMapManager.reportEvt < 9)
             {
-                Destroy(gameObject.transform.Find("EventBar"));
+                mapDes = true;
                 Destroy(gameObject);
                 ReportMapManager.reportEvt = 10;
             }
