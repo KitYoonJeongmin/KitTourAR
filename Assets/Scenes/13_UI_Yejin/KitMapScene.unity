@@ -885,7 +885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (2)
+      value: 2_CrowEventTrigger (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive
@@ -897,19 +897,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.1
+      value: 117.6
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 254.5
+      value: 202.5
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1163,9 +1163,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 922141366238391161, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: crowIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (1)
+      value: 1_CrowEventTrigger (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive
@@ -1177,19 +1181,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26
+      value: 107.1152
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1197,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.6
+      value: 422.8619
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1768,15 +1772,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger
+      value: 0_CrowEventTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 108.4
+      value: 238.7
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1784,7 +1800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -155
+      value: 317.7
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1840,7 +1856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_Name
-      value: CrowEventTrigger (3)
+      value: 3_CrowEventTrigger (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1884764996845848612, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_IsActive
@@ -1852,19 +1868,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1872,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 137.4
+      value: -206.5632
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2483,11 +2499,6 @@ MonoBehaviour:
   crowTrigger: {fileID: 1173462587}
   button: {fileID: 0}
   image: {fileID: 0}
-  sprites:
-  - {fileID: 21300000, guid: 5f5686f3e106622429e078b4741b7a05, type: 3}
-  - {fileID: 21300000, guid: c37682c6bf25158429fdf59b39a53bb1, type: 3}
-  - {fileID: 21300000, guid: 001925f9e8d171b4e93acb83cae9ae8a, type: 3}
-  - {fileID: 21300000, guid: ed600fbbbd398ae4ca7fda35b0803888, type: 3}
 --- !u!114 &1708674017
 MonoBehaviour:
   m_ObjectHideFlags: 0

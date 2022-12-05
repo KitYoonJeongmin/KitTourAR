@@ -7,29 +7,16 @@ public class MapCrowManager : MonoBehaviour
 {
     public CrowTrigger crowTrigger;
     public GameObject button;
-    //public Button crowBtn;
     public Image image;
-    
-
-    [SerializeField]
-    private Sprite[] sprites;
-    
-
 
     void Start()
     {
-        //crowBtn = transform.Find("Crow").GetComponent<Button>();
-        //button.SetActive(false);
 
         if (IsCatch.crowMap == 1)
         {
-            /*
-            Debug.Log("hi");
-            button.SetActive(true);
-            Debug.Log(IsCatch.crowImgNum.ToString());
-            
-            image.sprite = sprites[IsCatch.crowImgNum];*/
-            //Å°°ªÀº »ý¼º½Ã Á¸ÀçÇÏÁö¸¸ ¸¸¾à¿¡ Á¸ÀçÇÏÁö ¾Ê´Â°æ¿ì »ý¼ºÇÏ°í Å°°ª 1·Î ¼³Á¤__ÁøÇàµÇ´Â ÄÚµå´Â ÀâÀº °æ¿ì¸¦ ³ªÅ¸³»±â ¶§¹®¿¡ µé¾î¿À´Â °ªÀº Ç×»ó 1ÀÓ
+            //image.sprite = sprites[IsCatch.crowImgNum];
+            //Å°ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½à¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ Å°ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½__ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Úµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¸¦ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ 1ï¿½ï¿½
+         
             if (!(PlayerPrefs.HasKey("Crow" + IsCatch.crowImgNum.ToString())))
                 PlayerPrefs.SetInt("Crow" + IsCatch.crowImgNum.ToString(),1);
             PlayerPrefs.SetInt("Crow" + IsCatch.crowImgNum.ToString(), 1);

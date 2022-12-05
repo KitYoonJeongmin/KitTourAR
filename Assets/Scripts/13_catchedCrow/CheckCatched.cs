@@ -23,7 +23,7 @@ public class CheckCatched : MonoBehaviour
         //    test = Random.Range(0, 2);
         //    PlayerPrefs.SetInt("Crow"+i.ToString(), test);
         //}
-        
+
         //PlayerPrefs.SetInt("Crow0", 0);
         //PlayerPrefs.SetInt("Crow1", 0);
         //PlayerPrefs.SetInt("Crow2", 0);

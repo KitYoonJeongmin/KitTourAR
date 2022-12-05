@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,7 +34,6 @@ public class CrowTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        
         if (!(other.gameObject.tag == "mapCharacter")) { return; } //충돌된 object가 character가 아니면 return 시켜줌
         IsCatch.crowImgNum = crowIndex;
         gameObject.SetActive(false);
