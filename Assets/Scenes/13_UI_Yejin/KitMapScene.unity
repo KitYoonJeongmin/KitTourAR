@@ -897,15 +897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 35
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1181,15 +1181,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1780,15 +1780,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2967635911193696080, guid: 00096707aa7e82f45ae6a1c59a2d5e7a, type: 3}
       propertyPath: m_LocalPosition.x
