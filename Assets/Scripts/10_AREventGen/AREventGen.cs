@@ -135,10 +135,10 @@ public class AREventGen : MonoBehaviour
     /**�̺�Ʈ �������� Ȱ��ȭ, ��Ȱ��ȭ�� ����*/
     void Update()
     {
-
-        //text1.text = "x: "+ eventPre.transform.position.x.ToString() + ",y: " + eventPre.transform.position.y.ToString() + ",z: " + eventPre.transform.position.z.ToString();
-        text1.text = "위치: " + isInPlace.ToString();
-        text2.text = "생성여부: " + isGen.ToString();
+        if (text1 != null)
+            text1.text = "위치: " + isInPlace.ToString();
+        if (text2 != null)
+            text2.text = "생성여부: " + isGen.ToString();
         if(text3 != null)
             text3.text = "big위치: " + isBigEventPlace.ToString();
         if(text4 != null)

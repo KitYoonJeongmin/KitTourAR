@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5336727d7be32404c9ac396789142e1c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.440503, g: 0.48899317, b: 0.5693828, a: 1}
+  m_IndirectSpecularColor: {r: 0.65381616, g: 0.6796236, b: 0.7183784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &223974227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -476,8 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b056addcf95eeb428eebab73358932b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  latitude_text: {fileID: 223974228}
-  longitude_text: {fileID: 782628377}
   maxWaitTime: 10
   resendTime: 1
   latitude: 36.14295
@@ -1048,7 +1046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &782628376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1917,6 +1915,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1447621164, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447621164, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8058242231173309237, guid: 3acf99670d022294ab9b1f8c912e9f7c, type: 3}
       propertyPath: m_Name
       value: KitMap
