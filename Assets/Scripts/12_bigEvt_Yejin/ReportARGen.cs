@@ -101,19 +101,23 @@ public class ReportARGen : MonoBehaviour
 
     void Update()
     {
-        isRef.text = "ref持失: " + isGen.ToString();
+        if(ReportMapManager.reportEvt == 9)
+        {
+            if (isRef != null)
+                isRef.text = "ref持失: " + isGen.ToString();
 
-        if (!findReport)
-        {
-            if (isGen)
+            if (!findReport)
             {
-                DestroyEventPre();
+                if (isGen)
+                {
+                    DestroyEventPre();
+                }
+                return;
             }
-            return;
-        }
-        if (!isGen)
-        {
-            DetectGround();
+            if (!isGen)
+            {
+                DetectGround();
+            }
         }
     }
 
