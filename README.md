@@ -34,11 +34,22 @@
   
 ##### 4. 캐릭터 GPS기능  
  사용자의 움직임은 사용자의 GPS의 정보를 받아와 현재 사용자의 위치를 지도에 표시해 줍니다. GPS의 정보는 사용자의 위치를 나타낼 뿐만 아니라 이벤트들의 활성화를 위해 사용됩니다.  
+ 추가적으로 사용된 GPS기능의 API는 다음과 같다.  
+  #### GPS정보 받아오는 API  
+ https://docs.unity3d.com/ScriptReference/LocationService.Start.html  
+  #### GPS정보를 Unity 맵으로 변환해주는 API  
+ https://github.com/MichaelTaylor3D/UnityGPSConverter/blob/master/GPSEncoder.cs  
   
 #### 5. 이미지 트래킹 기능  
  GPS기능과 별개로 개발과정의 담당교수님인 최동수 교수님의 연구실 팻말을 AR카메라로 바라볼 경우 교수님의 연구실에 대한 정보를 얻으실수 있습니다!  
-
- 1프로젝트 설명
-3. 기능설명
-4. 개발환경 및 실행방법
-5. 
+ 사용된 API의 경우 유니티에서 제공되는 AR Foundation 인터페이스를 플랫폼에 맞게 구현하기 위해 AR코어를 사용했습니다.
+  
+  
+## 어플리케이션 다운로드  
+ 우리의 멋진 어플리케이션의 경우 제시된 링크에서 다운받으실 수 있습니다.  
+  https://www.dropbox.com/s/853jxb2w6ytjzx2/KitARTour.apk?dl=0  
+  
+## 사용방법  
+***
++1. 어플리케이션을 실행하면 시장버튼과 사용방법 버튼이 나온다.  
+ +1-1 
