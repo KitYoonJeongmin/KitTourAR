@@ -55,7 +55,7 @@ public class SmallEventStart : MonoBehaviour
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
                 
-                else if (hitobj.collider.CompareTag("reportEventPre"))
+                if (hitobj.collider.CompareTag("reportEventPre"))
                 {
                     if (ReportMapManager.reportEvt != 9)
                         return;

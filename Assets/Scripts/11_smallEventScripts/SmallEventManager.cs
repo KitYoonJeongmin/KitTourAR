@@ -45,7 +45,7 @@ public class SmallEventManager : MonoBehaviour
 
         scanPlace = place;
         PlaceInfo placeInfo = scanPlace.GetComponent<PlaceInfo>();
-        /*
+        
         if (place.name.Contains("Report"))
         {
             ReportEventView(placeInfo.documentId);
@@ -65,17 +65,6 @@ public class SmallEventManager : MonoBehaviour
 
             textUi.SetActive(isView);
         }
-        */
-        Debug.Log(placeInfo.documentId);
-        TextView(placeInfo.documentId);
-
-
-        if (!gameObject.name.Contains("Btn") && isBtnView == false)
-        {
-            Btn(placeInfo.documentId);
-        }
-
-        textUi.SetActive(isView);
     }
 
     public void TextView(string documentId) //함수 다른 스크립트에서 사용하려고 public으로 바꿔줬습니다.
