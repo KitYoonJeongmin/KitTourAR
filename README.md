@@ -8,7 +8,7 @@
 개발계기, 사용 목적, 최소 사용버전
 이 리포지토리는 금오공과대학교를 처음 방문하거나 교내 지리가 낯선 학생 및 방문객들에게 학교에 대한 지리적 이해를 높여줄 수 있는 어플리케이션입니다. 추가적으로 안드로이드 7.0'Nougat'이상의 버전에서만 작동합니다.
 
-시연영상
+시연영상  
 [![[Unity5] 금오공과대학교 AR](http://img.youtube.com/vi/fs6GoU8HAss/0.jpg)](https://www.youtube.com/watch?v=fs6GoU8HAss)
 
 
