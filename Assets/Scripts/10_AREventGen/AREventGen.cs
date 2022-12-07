@@ -236,9 +236,7 @@ public class AREventGen : MonoBehaviour
                 bigEvtLatLongs[i].lon = float.Parse(geoPoint.Longitude.ToString());
                 i++;
             }
-            
 
-            
         }
     }
 }

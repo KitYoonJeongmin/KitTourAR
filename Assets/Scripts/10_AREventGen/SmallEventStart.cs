@@ -54,15 +54,20 @@ public class SmallEventStart : MonoBehaviour
                     //else // 활성상태면 index증가해서 다음 text띄우기
                     //    smallEventManager.TextView(GetComponent<PlaceInfo>().documentId);
                 }
-
-                if (hitobj.collider.CompareTag("reportEventPre"))
+                
+                else if (hitobj.collider.CompareTag("reportEventPre"))
                 {
-                    gameObject.GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
-                    destroyMapObj = gameObject.GetComponent<PlaceInfo>().documentId;
-                    if (!smallEventManager.isView)
+                    if (ReportMapManager.reportEvt != 9)
+                        return;
+                    if (ReportMapManager.reportEvt == 9)
                     {
-                        //TimerManager.tmp = "뷰까지 동작가능";
-                        smallEventManager.View(GameObject.Find("ReportPref"));
+                        gameObject.GetComponent<PlaceInfo>().documentId = GameObject.Find("AR Session Origin").GetComponent<ReportARGen>().place;
+                        destroyMapObj = gameObject.GetComponent<PlaceInfo>().documentId;
+                        if (!smallEventManager.isView)
+                        {
+                            //TimerManager.tmp = "뷰까지 동작가능";
+                            smallEventManager.View(GameObject.Find("ReportPref"));
+                        }
                     }
                 }
 
