@@ -97,7 +97,3 @@
  7.2. 선택지를 통해 삼족오를 잡거나 잡지않을 수 있다.  
  > 7.2.1. 잡는다는 선택지를 고를경우 우측하단에 있는 알 모양의 버튼을 통해 잡은 삼족오의 모습을 볼 수 있다.  
  > 7.2.2. 도망간다는 선택지를 고를경우 지도화면으로 돌아오게 되며 잡았다는 표시는 뜨지않는다.  
-
-> This is a first blockqute.
->	> This is a second blockqute.
->	>	> This is a third blockqute.
