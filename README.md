@@ -12,6 +12,8 @@
 
 [![[Unity5] 금오공과대학교 AR](https://user-images.githubusercontent.com/93882395/212685850-2a59688e-5e1c-44d1-a614-0a7375df6117.png)](https://www.youtube.com/watch?v=fs6GoU8HAss)
 
+> *이미지 클릭*
+
 <br/>
 
 ## 소개
