@@ -26,7 +26,7 @@
 
 1.   **교내 건물 안내**
 
-     <img src="https://user-images.githubusercontent.com/93882395/212695766-8dcf2f3a-f0f4-47b7-a601-87be6a297a7d.gif" alt="프레젠테이션2" style="zoom:20%;" /> 
+     <img src="https://user-images.githubusercontent.com/93882395/212695766-8dcf2f3a-f0f4-47b7-a601-87be6a297a7d.gif" alt="프레젠테이션2" width="20%" height="20%" /> 
 
      교내 건물에 대한 설명과 관련 활동을 안내해 아직 학교가 익숙하지 않은 학생들의 적응을 돕습니다.
 
@@ -34,7 +34,7 @@
 
 2.   **미니 게임**
 
-     <img src="https://user-images.githubusercontent.com/93882395/212694661-f78cc9e4-41c3-48f9-bdc9-c1ec68d9f6f5.gif" alt="프레젠테이션1-1 (2)" style="zoom: 20%;" /><img src="https://user-images.githubusercontent.com/93882395/212694784-7b469987-6653-402c-9c21-1e804fbbf521.gif" alt="프레젠테이션1" style="zoom:20%;" /><img src="https://user-images.githubusercontent.com/93882395/212695859-232ec123-9a8f-4800-9545-e276095274a9.gif" alt="프레젠테이션3" style="zoom:20%;" /><img src="https://user-images.githubusercontent.com/93882395/212695867-0b7895b0-8b19-4af4-a0f5-796458dff37f.gif" alt="프레젠테이션4" style="zoom:20%;" /><img src="https://user-images.githubusercontent.com/93882395/212695878-251061d4-a149-4c20-a184-a36e117f268c.gif" alt="프레젠테이션5" style="zoom:20%;" />
+     <img src="https://user-images.githubusercontent.com/93882395/212694661-f78cc9e4-41c3-48f9-bdc9-c1ec68d9f6f5.gif" alt="프레젠테이션1-1 (2)" width="20%" height="20%" /><img src="https://user-images.githubusercontent.com/93882395/212694784-7b469987-6653-402c-9c21-1e804fbbf521.gif" alt="프레젠테이션1" width="20%" height="20%" /><img src="https://user-images.githubusercontent.com/93882395/212695859-232ec123-9a8f-4800-9545-e276095274a9.gif" alt="프레젠테이션3" width="20%" height="20%" /><img src="https://user-images.githubusercontent.com/93882395/212695867-0b7895b0-8b19-4af4-a0f5-796458dff37f.gif" alt="프레젠테이션4" width="20%" height="20%" /><img src="https://user-images.githubusercontent.com/93882395/212695878-251061d4-a149-4c20-a184-a36e117f268c.gif" alt="프레젠테이션5" width="20%" height="20%" />
 
      교내 부지마다 간단한 미니 게임을 제공합니다.🎮
 
@@ -50,7 +50,7 @@
 
 3.   **돌발 이벤트: 삼족오 출몰**
 
-     <img src="https://user-images.githubusercontent.com/93882395/212701861-2e141edc-bd91-4bad-8842-c412242718fa.png" alt="image" style="zoom: 20%;" /> 
+     <img src="https://user-images.githubusercontent.com/93882395/212701861-2e141edc-bd91-4bad-8842-c412242718fa.png" alt="image" width="20%" height="20%" /> 
 
      학교 이야깃거리와 어울리는 테마의 금오공대 마스코트가 돌발 출몰하는 이벤트입니다.
 
