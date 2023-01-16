@@ -50,7 +50,7 @@
 
 3.   **돌발 이벤트: 삼족오 출몰**
 
-     <img src="https://user-images.githubusercontent.com/93882395/212701861-2e141edc-bd91-4bad-8842-c412242718fa.png" alt="image" width="20%" height="20%" /> 
+     <img src="https://user-images.githubusercontent.com/93882395/212701861-2e141edc-bd91-4bad-8842-c412242718fa.png" alt="image" /> 
 
      학교 이야깃거리와 어울리는 테마의 금오공대 마스코트가 돌발 출몰하는 이벤트입니다.
 
